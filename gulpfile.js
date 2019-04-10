@@ -41,6 +41,7 @@ gulp.task('js', function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/select/bootstrap-select.min.js',
         'app/libs/slick-carousel/slick/slick.js',
+        'app/libs/featureCarousel/jquery.featureCarousel.js',
         'app/js/common.js'
 		])
 	.pipe(concat('scripts.min.js'))

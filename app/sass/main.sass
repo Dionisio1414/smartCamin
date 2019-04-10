@@ -1,6 +1,8 @@
 @import "vars"
 @import "fonts"
 @import "libs"
+@import "animations"
+@import "_mixins/buttons"
 
 ::placeholder
 	color: #666
@@ -50,7 +52,6 @@ h1
 h2
     @extend h1
     font-size: 40px
-    
 h3
     @extend h1
     font-size: 34px
@@ -102,16 +103,7 @@ main
                 &:last-child
                     margin-right: 0
     .call
-        font-family: $bold
-        font-size: 14px
-        text-transform: uppercase
-        letter-spacing: 1.4px
-        border-radius: 30px
-        background-image: radial-gradient(207px 207px at 749.58% 351.02%, #e72d47 0%, #ff563d 71%, #ff9c26 100%);
-        padding: 15px 33px
-        text-decoration: none
-        margin-left: 95px
-        color: #fff
+        +feedback-btn
         
 /* END HEADER */
 
@@ -198,6 +190,20 @@ main
 
 .experience
     margin-top: 136px
+    margin-bottom: 450px
+    &__carousel
+        background-color: transparent!important
+        width: 100%!important
+        .carousel-feature
+            border: none
+            img
+                display: block
+                max-width: 100%
+                height: auto
+        .tracker-individual-container
+            position: static!important
+            display: none!important
+            
     &__content
         h3
             margin-bottom: 25px
@@ -223,13 +229,13 @@ main
                         font-size: 16px
                         opacity: .5
                         color: $accent
-                    &:nth-child(5)
-                        margin-right: 0
                     &.active
                         a
                             opacity: 1
                     &.prev,
                     &.next
+                        position: static!important
+                        cursor: pointer
                         a
                             opacity: 1
                     &.prev
@@ -238,3 +244,149 @@ main
                         margin-left: 28px
 
 /* End experience */
+
+
+/* Steps */
+
+.steps
+    position: relative
+    background: linear-gradient(-45deg, #FF9988, #FF9A87, #FFBB7C)
+    background-size: 400% 400%
+    animation: Gradient 15s ease infinite
+    padding-top: 111px
+    margin-bottom: 325px
+    &::after
+        content: ""
+        position: absolute
+        bottom: -41%
+        left: -96px
+        width: 100%
+        height: 100%
+        background: linear-gradient(-45deg, #FF9988, #FF9A87, #FFBB7C)
+        z-index: -1
+        transform: rotate(-2deg)
+        border-radius: 50% 50% 270% 20%
+    .wrapper
+        display: none
+        &.active
+            display: block
+    &__main-caption
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        text-align: center
+        max-height: 255px
+        height: 100%
+        > div
+            p
+                font-family: $bold
+                line-height: 70px
+                text-transform: uppercase
+                letter-spacing: 7.7px    
+                margin: 0
+                color: #fff
+                &:first-child
+                    font-size: 77px
+                &:last-child
+                    font-family: $default-font
+                    font-size: 66px
+                    letter-spacing: 2.57px
+        &::before
+            content: ""
+            position: absolute
+            bottom: 0px
+            right: 0
+            width: 6px
+            height: 270px
+            background-color: rgba(255, 255, 255, 0.59)
+    &__caption
+        margin-left: 90px
+        text-transform: uppercase
+        color: rgba(255, 255, 255, 0.59)
+        .count
+            font-family: $bold
+            font-size: 18px
+            letter-spacing: 1.8px
+            margin-right: 10px
+            color: #fff
+        h4
+            font-family: $bold
+            font-size: 24px
+            text-transform: none
+            letter-spacing: 2.4px
+            margin-bottom: 24px
+            color: #fff
+    &__description
+        margin-left: 90px
+        margin-bottom: 78px
+        p
+            font-size: 14px
+            letter-spacing: .35px
+            line-height: 24px
+            max-width: 565px
+            color: rgba(255, 255, 255, 0.59)
+    &__tabs-slider
+        box-shadow: 0 28px 47px rgba(255, 200, 178, 0.22)
+        .slick-slide
+            background-color: #fff
+            padding: 35px 24px
+            text-align: center
+            div
+                div
+                    a
+                        font-family: $bold
+                        font-size: 18px
+                        letter-spacing: 1.8px
+                        text-decoration: none
+                        white-space: nowrap
+                        color: $text
+            &.slick-current
+                background: linear-gradient(-45deg, #F23F42, #FF563D, #FF9C26)
+                background-size: 400% 400%
+                a
+                    color: #fff
+    &__tabs-slider-arrows
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        padding: 0
+        margin: 0
+        list-style-type: none
+        display: flex
+        justify-content: space-between
+        width: 100%
+        pointer-events: none
+        li
+            cursor: pointer
+            pointer-events: visible
+            &.prev
+                margin-left: 32px
+            &.next
+                margin-right: 32px
+    .slider-wrapper
+        margin-top: 78px
+            
+/* End steps */
+
+/* Service */
+
+.service
+    margin: 0 253px
+    &__desc
+        margin-top: 111px
+        h2
+            margin-bottom: 25px
+        p
+            font-family: $semibold
+            font-size: 14px
+            letter-spacing: .35px
+            line-height: 24px
+            max-width: 565px
+            margin-bottom: 25px
+            color: $text
+        a
+            +feedback-btn
+            margin-left: 0
+
+/* End service */

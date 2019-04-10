@@ -81,18 +81,18 @@
             </div>
         </section>
         <section class="experience">
-            <div class="container-fluid">
+            <div class="container-fluid pl-0">
                 <div class="row">
-                    <div class="col-6">
-                        <div class="experience__carousel">
-                            <div>
-                                <img src="img/slide-image.jpg" alt="">
+                    <div class="col-6 pl-0">
+                        <div class="experience__carousel" id="carousel">
+                            <div class="carousel-feature">
+                                <img src="img/slide-image.png" class="carousel-image" alt="">
                             </div>
-                            <div>
-                                <img src="img/slide-image.jpg" alt="">
+                            <div class="carousel-feature">
+                                <img src="img/slide-image.png" class="carousel-image" alt="">
                             </div>
-                            <div>
-                                <img src="img/slide-image.jpg" alt="">
+                            <div class="carousel-feature">
+                                <img src="img/slide-image.png" class="carousel-image" alt="">
                             </div>
                         </div>
                     </div>
@@ -104,24 +104,12 @@
                             </p>
                             <div class="slider-pagination">
                                 <ul>
-                                    <li class="prev">
+                                    <li id="carousel-left" class="prev">
                                         <a href="#">
                                             <img src="img/icons/pagination-ar-lt.svg" alt="">
                                         </a>
                                     </li>
-                                    <li class="active">
-                                        <a href="#">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">4</a>
-                                    </li>
-                                    <li class="next">
+                                    <li id="carousel-right" class="next">
                                         <a href="#">
                                             <img src="img/icons/pagination-ar-rt.svg" alt="">
                                         </a>
@@ -129,6 +117,169 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="steps">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="steps__main-caption">
+                            <div>
+                                <p>ЭТАПЫ</p>
+                                <p>ПРОЕКТА</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                       <!-- Step one -->
+                        <div class="wrapper active">
+                            <div class="steps__caption">
+                                <span class="count">01</span>Step
+                                <h4>Знакомство.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                    Вашего номера телефона мы не знаем, так что первый шаг придется сделать Вам. На данном этапе мы получаем вводную информацию (этап строительства, Ваши пожелания, планы на будущее, и т.д.), консультируем в удаленном режиме и договариваемся о встрече.
+                                </p>
+                            </div>
+                        </div>     
+                        <!-- Step two -->                   
+                        <div class="wrapper">
+                            <div class="steps__caption">
+                                <span class="count">02</span>Step
+                                <h4>Встреча.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                «Лучше один раз увидеть чем сто раз услышать», поэтому скорее всего она произойдет у Вас на объекте. Мы производим замеры, сужаем круг возможных вариантов, отталкиваясь от существующих реалии, подбираем оборудование, определяемся с концепцией.
+                                </p>
+                            </div>
+                        </div>           
+                        <!-- Step three -->             
+                        <div class="wrapper">
+                            <div class="steps__caption">
+                                <span class="count">03</span>Step
+                                <h4>Смета.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                  На основе замеров и выбранного оборудования, производим предварительный расчет необходим финансовых вливаний для реализации Вашего проекта. По времени занимает порядка двух дней.
+
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step four -->
+                        <div class="wrapper">
+                            <div class="steps__caption">
+                                <span class="count">04</span>Step
+                                <h4>Подготовка.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                    Это этап закупки оборудования (каминной топки, каминофена, буржуйки, банной печи), изоляционных и других необходимых строительных материалов, компоновки и производства дымохода,   с последующим завозом их на объект. Параллельно ведется работа с дизайнером для  утверждения рабочих чертежей. Из практики, занимает порядка одной рабочей недели при условии наличия оборудования в Украине. Требует финансовых вливаний согласно утвержденной сметы в полном объеме на оборудование и материалы.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step five -->
+                        <div class="wrapper">
+                            <div class="steps__caption">
+                                <span class="count">05</span>Step
+                                <h4>Строительство.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                    Реализация проекта согласно чертежам и визуализации. Занимает порядка двух рабочих недель, в зависимости от сложности.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step six -->
+                        <div class="wrapper">
+                            <div class="steps__caption">
+                                <span class="count">06</span>Step
+                                <h4>Фактическая смета.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                    Производиться пересчет сметы основываясь на информации о фактически использованных материалах. Из практики, имеет  отклонения от первоначальной сметы в пределах 5%, и обычно в меньшую сторону
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step seven -->
+                        <div class="wrapper">
+                            <div class="steps__caption">
+                                <span class="count">07</span>Step
+                                <h4>Запуск.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                   Здесь происходит проверка работоспособности системы в целом, и проводиться  инструктаж по ее безопасной эксплуатации в будущем.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step eight -->
+                        <div class="wrapper">
+                            <div class="steps__caption">
+                                <span class="count">08</span>Step
+                                <h4>Окончательных расчет.</h4>
+                            </div>
+                            <div class="steps__description">
+                                <p>
+                                    Согласно фактической смете.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col p-0 slider-wrapper">
+                        <div class="steps__tabs-slider">
+                            <div><a href="#"><span>01.&nbsp;</span>Знакомство</a></div>
+                            <div><a href="#"><span>02.&nbsp;</span>Встреча</a></div>
+                            <div><a href="#"><span>03.&nbsp;</span>Смета</a></div>
+                            <div><a href="#"><span>04.&nbsp;</span>Подготовка</a></div>
+                            <div><a href="#"><span>05.&nbsp;</span>Строительство</a></div>
+                            <div><a href="#"><span>06.&nbsp;</span>Фактическая смета</a></div>
+                            <div><a href="#"><span>07.&nbsp;</span>Запуск</a></div>
+                            <div><a href="#"><span>08.&nbsp;</span>Окончательнй расчет</a></div>
+                        </div>
+                        <ul class="steps__tabs-slider-arrows">
+                            <li class="prev">
+                                <img src="img/icons/arrow-slide-prev.svg" alt="">
+                            </li>
+                            <li class="next">
+                                <img src="img/icons/arrow-slide-next.svg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="service">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="service__desc">
+                                    <h2>НАШИ УСЛУГИ</h2>
+                                    <p>Мы работаем в данной сфере с 2010 года. Нами построено порядка 250 каминов, 40 саун, установлено более 100 каминофенов и печей и смонтировано около 300 дымоходв. Основываясь на таком фундаменте знаний, Мы работаем качественно и быстро.</p>
+                                    <a href="#">ЗАКАЗАТЬ УСЛУГУ</a>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="service__item">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        
                     </div>
                 </div>
             </div>
