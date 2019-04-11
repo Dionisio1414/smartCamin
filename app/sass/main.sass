@@ -252,7 +252,7 @@ main
     position: relative
     background: linear-gradient(-45deg, #FF9988, #FF9A87, #FFBB7C)
     background-size: 400% 400%
-    animation: Gradient 15s ease infinite
+    animation: Gradient 7s ease infinite
     padding-top: 111px
     margin-bottom: 325px
     &::after
@@ -371,10 +371,14 @@ main
 
 /* Service */
 
+.mb-col
+    margin-bottom: 39px
+
 .service
-    margin: 0 253px
+    margin: 0 253px 244px 253px
     &__desc
         margin-top: 111px
+        margin-bottom: 142px
         h2
             margin-bottom: 25px
         p
@@ -388,5 +392,118 @@ main
         a
             +feedback-btn
             margin-left: 0
-
+    &__item
+        position: relative
+        overflow: hidden
+        box-shadow: 0 3px 30px rgba(255, 200, 178, 0.30)
+        height: 459px
+        transition: all .35s ease
+        .image
+            img
+                width: 100%
+                max-height: 429px
+                height: 429px
+        &.bigger
+            height: 958px
+            .image
+                height: 878px
+                img
+                    max-height: none
+                    height: 100%
+        .desc
+            background-color: #fff
+            width: 100%
+            position: absolute
+            bottom: 0
+            left: 0
+            padding: 41px 20px 41px 26px
+            max-height: 120px
+            transition: all .35s ease
+            h4
+                font-family: $bold
+                font-size: 16px
+                letter-spacing: 1.6px
+                line-height: 24px
+                margin-bottom: 30px
+                color: $text
+            p
+                font-family: $semibold
+                font-size: 14px
+                letter-spacing: -.35px
+                color: #000
+        &.hovered
+            box-shadow: 30px 35px 12px rgba(0, 0, 0, 0.1)
+            .desc
+                background-color: rgba(255,159,104, .66)
+                h4,
+                p
+                    color: #fff
 /* End service */
+
+
+/* Gallery */
+
+.gallery
+    &__caption
+        margin-bottom: 30px
+        h3
+            margin-left: 253px
+    &__dots
+        position: relative
+        .slick-dots 
+            li 
+                button:before
+                    width: 19px
+                    height: 19px
+                    font-size: 50px
+                    color: #fff
+                &.slick-active
+                    button:before
+                        color: #fff
+                        opacity: 1 
+    &__wrapper
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            top: 115px
+            left: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
+            background-size: 400% 400%
+            animation: Gradient 7s ease infinite
+        //&::after
+            content: ""
+            position: absolute
+            top: -45px
+            right: -45px
+            width: 50%
+            height: 50%
+            background: linear-gradient(-45deg, #FF9988, #FF9A87, #FFBB7C)
+            background-size: 400% 400%
+            animation: Gradient 7s ease infinite
+            border-radius: 70% 70% 5% 20%
+            transform: rotate(-20deg)
+            z-index: -1
+        .wave-bg
+            position: absolute
+            top: -191px
+            right: 0
+            width: 70%
+            z-index: -1
+    .image
+        max-height: 337px
+        height: 317px
+        &.main
+            max-height: 713px
+            height: 611px
+        &.top
+            margin-bottom: 30px
+    &__logo
+        margin-top: 32px
+        margin-bottom: 45px
+        img
+            position: relative
+
+/* End gallery */

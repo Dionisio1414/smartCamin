@@ -41,6 +41,38 @@ $(function() {
         e.preventDefault();
     });
     
+    $('.service__item').hover(function() {
+        var $imageHeight = $(this).find('.image').height(),
+            $itemHeight = $(this).height();
+        $(this).find('.image img').css({
+            "max-height" : $itemHeight, 
+            height : $itemHeight
+        });
+        $(this).addClass('hovered').find('.desc').css({
+            "max-height" : 'none',
+            bottom: 'auto',
+            height: $itemHeight,
+            top: 0
+        });
+    }, function() {
+        $(this).removeClass('hovered').find('.desc').css({
+            "max-height" : 120,
+            top: 'auto',
+            height: 'auto',
+            bottom: 0  
+        });
+    });
+    
+    $('.gallery .gallery-slider').slick({
+        slidesToShow: 1,
+        dots: true
+    });
+    
+    var $dotsClone = $('.gallery .gallery-slider .slick-dots').clone(true),
+        $customDots = $('.gallery .gallery__dots');
+    $('.gallery .gallery-slider .slick-dots').remove();
+    $customDots.html($dotsClone);
+    
     
 });
 
