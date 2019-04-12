@@ -14,7 +14,18 @@
         height: 900px
         &__content
             left: 3.177vw
-            
+        &__background
+            top: -29%
+
+    .service
+        margin-left: 3.177vw
+        margin-right: 3.177vw
+
+    .gallery
+        &__caption 
+            h3
+                margin-left: 3.177vw
+        
 @media screen and (max-width: 1440px)
     .header
         &__menu 
@@ -24,6 +35,19 @@
                         font-size: 13px
         .call
             font-size: 12px
+
+    .steps
+        &__caption
+            margin-left: 40px
+        &__description
+            margin-left: 40px
+        &__main-caption 
+            > div 
+                p
+                    &:first-child
+                        font-size: 66px
+                    &:last-child
+                        font-size: 55px
             
             
 @media screen and (max-width: 1366px)
@@ -51,14 +75,32 @@
                 font-size: 36px
             p
                 font-size: 16px
+        &__background
+            top: -31%
+
+    .service
+        &__item 
+            .desc 
+                h4
+                    font-size: 16px
             
             
 +media-breakpoint-down(lg)
+    .header
+        &__menu 
+            ul 
+                li
+                    margin-right: 2.8vw
+        .call
+            margin-left: 4vw            
+
     .consultation
         &__background
             width: 92.01vw
             height: 67.594vw
             transform: rotate(57deg)
+            img
+                transform: rotate(-57deg) scale(1.5)
         &__content
             h1
                 font-size: 28px
@@ -66,6 +108,17 @@
                 font-size: 14px
                 line-height: 24px
                 max-width: 505px
+
+    .experience
+        margin-bottom: 200px
+        &__content
+            margin: 0 auto
+            margin-top: 200px
+
+    .gallery
+        &__caption 
+            h3
+                font-size: 26px
     
 +media-breakpoint-down(md)
     .header
@@ -101,6 +154,32 @@
         .call
             text-align: center
             margin-top: 68px
+
+    .consultation
+        &__background
+            width: 97.01vw
+            height: 72.594vw
+            top: -28%
+            right: -290px
+
+    .experience
+        margin-top: 200px
+        margin-bottom: 170px
+
+    .steps
+        &__caption
+            margin-left: 0
+            text-align: center
+        &__description
+            margin-left: 0
+            margin-bottom: 0
+            text-align: center
+            p
+                max-width: none
+        &__main-caption
+            margin-bottom: 70px
+            &::before
+                display: none
     
 +media-breakpoint-down(sm)
     .header
@@ -114,27 +193,34 @@
                     g
                         display: none    
     .consultation
-        height: 100vh
+        height: 675px
+        border-bottom: 1px solid rgba(235,235,235, .7)
+        &__content
+            top: 70%
         &__background
             width: 100vw
-            height: 91.594vw
-            transform: rotate(39deg)
-            
-        
+            height: 100vw
+            transform: rotate(58deg)
+            right: -300px
+            top: -41%
+            border-radius: 145px
+
 +media-breakpoint-down(xs)
     .header
         &__popup-menu
             width: 100%
             
     .consultation
-        border-bottom: 1px solid rgba(235,235,235, .7)
+        height: 567px
         &__background
             width: 100vw
             height: 100vw
-            right: -218px
-            top: -27%
+            right: -220px
+            top: -25%
             transform: rotate(34deg)
             border-radius: 65px
+            img
+                transform: rotate(-34deg) scale(1.5)
         &__content
             display: flex
             flex-direction: column
@@ -144,7 +230,7 @@
                 font-size: 18px
             p
                 font-size: 12px
-                max-width: 400px
+                max-width: 350px
             a
                 background-image: linear-gradient(to right,#ff9c26 0,#ff563d 71%,#e72d47 100%)
                 order: 1
@@ -159,12 +245,91 @@
                     color: #fff
                 span.arrow
                     display: none
+    .experience
+        margin-top: 190px
+        margin-bottom: 100px
+        &__content 
+            h3
+                font-size: 16px
+            p
+                font-size: 12px
+            .slider-pagination 
+                ul
+                    text-align: center
+                    li
+                        &.prev
+                            float: left
+                        &.next
+                            float: right
+
+    .steps
+        &__tabs-slider
+            .slick-slide
+                text-align: left
+        &__tabs-slider-arrows
+            justify-content: flex-end
+            height: 100%
+            li
+                width: 12.5%
+                height: 100%
+                background: #fff
+                display: flex
+                justify-content: center
+                &.next
+                    margin: 0
+                &.prev
+                    display: none!important
+        &__caption
+            text-align: left
+            .count
+                font-size: 14px
+            h4
+                font-size: 14px
+        &__description
+            text-align: left
+            p
+                font-size: 12px
                     
 @media screen and (max-width: 425px)
+        .header
+            &__logo
+                img
+                    display: block
+                a
+                    svg
+                        display: none
+            &__hamburger-menu
+                width: 25px
+                height: 25px
+                span
+                    height: 2px
+                    &:nth-child(2),
+                    &:nth-child(3)
+                        top: 8px
+                    &:nth-child(4)
+                        top: 16px
+
         .consultation
             &__background
-                top: -15%
-                right: -120px
-                border-radius: 50px
-                transform: rotate(24deg)
-                
+                top: -32%
+                right: -155px
+                border-radius: 70px 70px 0px 70px
+                transform: rotate(31deg)
+            &__content
+                top: 60%
+
+        .steps
+            padding-top: 70px
+            &__tabs-slider-arrows 
+                li
+                    width: 20%
+            &::after
+                bottom: -54%
+                left: -254px
+                transform: rotate(56deg)
+
+@media screen and (max-width: 375px)
+    .consultation
+        &__background
+            top: -27%
+            right: -125px

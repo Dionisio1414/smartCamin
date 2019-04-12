@@ -67,6 +67,11 @@ main
     position: relative
     z-index: 1
     transition: all .35s ease
+    &__logo
+        img
+            display: none
+        svg
+            height: 90px
     &__menu
         ul
             padding: 0
@@ -219,11 +224,11 @@ main
             color: $text
     &__background
         position: absolute
-        right: -288px
-        top: -21%
+        right: -255px
+        top: -23%
         width: 74.01vw
         height: 63.594vw
-        border-radius: 145px
+        border-radius: 219px 169px 155px 135px
         transform: rotate(65deg)
         background-color: $accent
         overflow: hidden
@@ -248,7 +253,7 @@ main
 /* Experience */
 
 .experience
-    margin-top: 136px
+    margin-top: 370px
     margin-bottom: 450px
     &__carousel
         background-color: transparent!important
@@ -264,6 +269,7 @@ main
             display: none!important
             
     &__content
+        max-width: 516px
         h3
             margin-bottom: 25px
         p
@@ -271,7 +277,7 @@ main
             font-size: 14px
             letter-spacing: .35px
             line-height: 24px
-            max-width: 516px
+            //max-width: 516px
             color: $text
         .slider-pagination
             margin-top: 20px
@@ -484,6 +490,7 @@ main
                 letter-spacing: 1.6px
                 line-height: 24px
                 margin-bottom: 30px
+                max-width: 280px
                 color: $text
             p
                 font-family: $semibold
@@ -532,20 +539,21 @@ main
             background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
             background-size: 400% 400%
             animation: Gradient 7s ease infinite
-        //&::after
+        &::after
             content: ""
             position: absolute
-            top: -45px
-            right: -45px
-            width: 50%
+            top: -161px
+            right: -88px
+            width: 65%
             height: 50%
-            background: linear-gradient(-45deg, #FF9988, #FF9A87, #FFBB7C)
+            background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
             background-size: 400% 400%
             animation: Gradient 7s ease infinite
-            border-radius: 70% 70% 5% 20%
+            border-radius: 40% 70% 5% 40%
             transform: rotate(-20deg)
             z-index: -1
         .wave-bg
+            display: none
             position: absolute
             top: -191px
             right: 0

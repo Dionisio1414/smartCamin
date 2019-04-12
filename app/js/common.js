@@ -1,18 +1,94 @@
 $(function() {
-    $('#carousel').featureCarousel({
-        largeFeatureWidth: 0.8,
-        largeFeatureHeight: 0.8,
-        smallFeatureWidth: 0.5,
-        smallFeatureHeight: 0.5,
-        trackerSummation: false,
-        autoPlay: 0
+    // if($(window).width() > 1366) {
+    //     $('#carousel').featureCarousel({
+    //         largeFeatureWidth: 0.8,
+    //         largeFeatureHeight: 0.8,
+    //         smallFeatureWidth: 0.5,
+    //         smallFeatureHeight: 0.5,
+    //         trackerSummation: false,
+    //         autoPlay: 0
+    //     });
+    // }
+
+    // if($(window).width() < 1366) {
+    //     $('#carousel').featureCarousel({
+    //         largeFeatureWidth: 0.6,
+    //         largeFeatureHeight: 0.6,
+    //         smallFeatureWidth: 0.3,
+    //         smallFeatureHeight: 0.3,
+    //         trackerSummation: false,
+    //         autoPlay: 0
+    //     });
+    // }
+
+    // if($(window).width() < 1200) {
+    //     $('#carousel').featureCarousel({
+    //         largeFeatureWidth: 0,
+    //         largeFeatureHeight: 0,
+    //         smallFeatureWidth: 0,
+    //         smallFeatureHeight: 0,
+    //         trackerSummation: false,
+    //         autoPlay: 0
+    //     });
+    // }
+
+    var resolution_1 = {
+        forcedImageWidth: 450,
+        forcedImageHeight: 550
+    }
+
+    var resolution_2 = {
+        forcedImageWidth: 400,
+        forcedImageHeight: 500
+    }
+
+    var resolution_3 = {
+        forcedImageWidth: 350,
+        forcedImageHeight: 450
+    }
+
+    var resolution_4 = {
+        flankingItems: 1
+    }
+
+    $('#carousel').waterwheelCarousel();
+
+    if($(window).width() < 1600) {
+        $('#carousel').waterwheelCarousel(resolution_1);
+    }
+
+    if($(window).width() < 1440) {
+         $('#carousel').waterwheelCarousel(resolution_2);
+    }
+
+    if($(window).width() < 1366) {
+        $('#carousel').waterwheelCarousel(resolution_3);
+    }
+
+    if($(window).width() < 1200) {
+        $('#carousel').waterwheelCarousel(resolution_1);
+    }
+
+    if($(window).width() < 768) {
+        $('#carousel').waterwheelCarousel(resolution_2);
+    }
+
+    if($(window).width() < 576) {
+        $('#carousel').waterwheelCarousel(resolution_4);
+    }
+
+    var $carouselExp = $('#carousel').waterwheelCarousel(); 
+    $('.experience__content .slider-pagination ul li.next a').click(function() {
+        $carouselExp.next();
+        return false;
     });
     
-    $('.experience__content .slider-pagination ul li.next a, .experience__content .slider-pagination ul li.prev a').click(function(e) {
-        e.preventDefault();
+    $('.experience__content .slider-pagination ul li.prev a').click(function() {
+        $carouselExp.prev();
+        return false;
     });
     
-    var $carouselItems = $('.experience__carousel > div'),
+    var $carouselItems = $('.experience__carousel > img'),
         $paginationArea = $('.experience__content .slider-pagination ul li.prev'),
         $arr = [];
     $carouselItems.each(function(i) {
@@ -28,7 +104,33 @@ $(function() {
         slidesToShow: 5,
         arrows: true,
         prevArrow: $('.steps__tabs-slider-arrows .prev'),
-        nextArrow: $('.steps__tabs-slider-arrows .next')
+        nextArrow: $('.steps__tabs-slider-arrows .next'),
+        responsive: [
+            {
+                breakpoint: 1600,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
     
     var $stepSlides = $('.steps__tabs-slider .slick-slide:not(.slick-cloned)'), $wrapperContent = $('.steps .wrapper');
@@ -126,10 +228,6 @@ $(function() {
            $(this).removeClass('open');
        }
     });
-    
-    console.log(calculatePercent());
-    
-    
 });
 
 Array.prototype.last = function() {
