@@ -66,6 +66,7 @@ main
     padding: 28px 35px 0 35px
     position: relative
     z-index: 1
+    transition: all .35s ease
     &__menu
         ul
             padding: 0
@@ -74,7 +75,7 @@ main
             font-size: 0
             li
                 display: inline-block
-                margin-right: 78px
+                margin-right: 4.063vw
                 a
                     position: relative
                     font-family: $bold
@@ -104,6 +105,62 @@ main
                     margin-right: 0
     .call
         +feedback-btn
+        margin-left: 4.948vw
+    &.sticky
+        position: fixed
+        width: 100% 
+        background-color: #fff
+        z-index: 20
+        padding-bottom: 28px
+        ul
+            li
+                a
+                    color: #000
+                    &:hover
+                        color: $accent
+        .header__hamburger-menu
+            span
+                background-color: $accent
+    &__hamburger-menu
+        display: none
+        position: relative
+        width: 30px
+        height: 35px
+        z-index: 10
+        cursor: pointer
+        span
+            display: block
+            position: absolute
+            left: 0
+            height: 4px
+            width: 100%
+            background-color: #fff
+            opacity: 1
+            transform: rotate(0deg)
+            transition: all .35s ease-in-out
+            &:nth-child(1)
+                top: 0
+            &:nth-child(2),
+            &:nth-child(3)
+                top: 11px
+            &:nth-child(4)
+                top: 22px
+        &.open
+            span
+                background-color: $accent
+                &:nth-child(1)
+                    top: 18px
+                    width: 0%
+                    left: 50%
+                &:nth-child(2)
+                    transform: rotate(45deg)
+                &:nth-child(3)
+                    transform: rotate(-45deg)
+                &:nth-child(4)
+                    top: 18px
+                    width: 0%
+                    left: 50%
+                
         
 /* END HEADER */
 
@@ -116,7 +173,7 @@ main
     &__content
         position: absolute
         top: 50%
-        left: 253px
+        left: 13.177vw
         transform: translateY(-50%)
         max-width: 620px
         > a
@@ -126,6 +183,7 @@ main
             font-size: 14px
             letter-spacing: 1.4px
             text-transform: uppercase
+            overflow: hidden
             padding: 14px 27px
             padding-left: 75px
             border: 1px solid rgba(#ff4a41, .2)
@@ -135,21 +193,22 @@ main
             text-decoration: none
             transition: all .35s ease
             color: $text
-            span
-                display: -webkit-flex
-                display: -moz-flex
-                display: -ms-flex
-                display: -o-flex
+            span.arrow
+                position: absolute
                 display: flex
+                justify-content: center
                 align-items: center
                 position: absolute
                 top: 0
                 left: 0
+                width: 14%
                 height: 100%
                 padding-left: 16px;
                 padding-right: 16px
-                background-color: $accent
-                border-radius: 50%
+                background-image: linear-gradient(to right, rgba(231,45,71,1) 0%, rgba(255,86,61,1) 29%, rgba(255,156,38,1) 100%)
+                border-radius: 25px
+                color: #fff
+                transition: all .65s ease-in-out
         h1
             margin-bottom: 19px
         p
@@ -162,8 +221,8 @@ main
         position: absolute
         right: -288px
         top: -21%
-        width: 1421px
-        height: 1221px
+        width: 74.01vw
+        height: 63.594vw
         border-radius: 145px
         transform: rotate(65deg)
         background-color: $accent
@@ -250,7 +309,7 @@ main
 
 .steps
     position: relative
-    background: linear-gradient(-45deg, #FF9988, #FF9A87, #FFBB7C)
+    background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
     background-size: 400% 400%
     animation: Gradient 7s ease infinite
     padding-top: 111px
@@ -262,7 +321,7 @@ main
         left: -96px
         width: 100%
         height: 100%
-        background: linear-gradient(-45deg, #FF9988, #FF9A87, #FFBB7C)
+        background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
         z-index: -1
         transform: rotate(-2deg)
         border-radius: 50% 50% 270% 20%
@@ -342,7 +401,7 @@ main
                         white-space: nowrap
                         color: $text
             &.slick-current
-                background: linear-gradient(-45deg, #F23F42, #FF563D, #FF9C26)
+                background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
                 background-size: 400% 400%
                 a
                     color: #fff
@@ -493,13 +552,23 @@ main
             width: 70%
             z-index: -1
     .image
+        display: block
         max-height: 337px
         height: 317px
+        transition: all .35s ease
+        img
+            filter: brightness(100%)
+            transition: all .35s ease
         &.main
             max-height: 713px
             height: 611px
         &.top
             margin-bottom: 30px
+        &:hover
+            box-shadow: 30px 35px 12px rgba(120, 39, 6, 0.14)
+            img
+                filter: brightness(85%)
+                
     &__logo
         margin-top: 32px
         margin-bottom: 45px
@@ -507,3 +576,75 @@ main
             position: relative
 
 /* End gallery */
+
+/* Footer */
+
+.footer
+    position: relative
+    background-color: $text
+    padding: 48px 0 5px 0
+    &__copyright
+        position: absolute
+        bottom: 0
+        span
+            font-family: "Montserrat Light", sans-serif
+            font-size: 12px
+            letter-spacing: .78px
+            color: #fff
+    &__contacts
+        margin-bottom: 31px
+        ul
+            padding: 0
+            margin: 0
+            list-style-type: none
+            display: inline-block
+            li
+                display: inline-block
+                margin-right: 34px
+                &:last-child
+                    margin-right: 0
+                &:hover
+                    a
+                        svg
+                            use
+                                fill: #ffc8b2
+        .sub-container
+            display: -webkit-flex
+            display: -moz-flex
+            display: -ms-flex
+            display: -o-flex
+            display: flex
+            align-items: center
+            margin-top: 23px
+            a
+                font-family: $bold
+                font-size: 16px
+                letter-spacing: .4px
+                text-decoration: none
+                line-height: 24px
+                color: #fff
+            div
+                &:first-child
+                    margin-right: 25px
+                &:last-child
+                    margin-left: 25px
+            .space
+                font-family: "Montserrat Light", sans-serif
+                font-size: 30px
+                line-height: 30px
+                color: #fff
+    &__created
+        position: absolute
+        bottom: 0
+        right: 23px
+        span
+            font-family: "Montserrat Light", sans-serif
+            font-size: 12px
+            letter-spacing: .78px
+            margin-right: 8px
+            color: #fff
+        
+/* End footer */
+
+
+@import 'media'

@@ -1,0 +1,170 @@
+@import 'vars'
+
+@media screen and (max-width: 1600px)
+    .header
+        &__menu 
+            ul 
+                li
+                    margin-right: 1.5vw
+        .call
+            margin-left: 2vw
+            
+            
+    .consultation
+        height: 900px
+        &__content
+            left: 3.177vw
+            
+@media screen and (max-width: 1440px)
+    .header
+        &__menu 
+            ul 
+                li 
+                    a
+                        font-size: 13px
+        .call
+            font-size: 12px
+            
+            
+@media screen and (max-width: 1366px)
+    .header
+        padding-left: 0
+        padding-right: 0
+        &__menu
+            ul
+                li
+                    margin-right: 1.8vw
+                    a
+                        font-size: 11px
+        .call
+            font-size: 11px
+            margin-left: 1vw
+            padding-left: 10px
+            padding-right: 10px
+        
+    .consultation
+        height: 770px
+        &__content
+            a
+                font-size: 12px
+            h1
+                font-size: 36px
+            p
+                font-size: 16px
+            
+            
++media-breakpoint-down(lg)
+    .consultation
+        &__background
+            width: 92.01vw
+            height: 67.594vw
+            transform: rotate(57deg)
+        &__content
+            h1
+                font-size: 28px
+            p
+                font-size: 14px
+                line-height: 24px
+                max-width: 505px
+    
++media-breakpoint-down(md)
+    .header
+        &__hamburger-menu
+            display: block
+        &__menu
+            ul
+                li
+                    display: block
+                    margin: 0
+                    text-align: center
+                    a
+                        font-size: 14px
+                        color: #000
+        &__popup-menu
+            display: none!important
+            position: absolute
+            top: 0
+            right: -45%
+            background-color: #fff
+            width: 50%
+            padding: 30px 15px 30px 15px
+            box-shadow: 0 3px 27px rgba(0, 0, 0, 0.16)
+            height: calc(100vh + 88px)
+            .header__menu
+                ul
+                    li
+                        margin-bottom: 25px
+                        &:last-child
+                            margin-bottom: 0
+            &.open-popup
+                display: flex!important
+        .call
+            text-align: center
+            margin-top: 68px
+    
++media-breakpoint-down(sm)
+    .header
+        &__popup-menu
+            width: 60%
+        &__logo
+            a
+                svg
+                    use:not(:first-of-type)
+                        display: none
+                    g
+                        display: none    
+    .consultation
+        height: 100vh
+        &__background
+            width: 100vw
+            height: 91.594vw
+            transform: rotate(39deg)
+            
+        
++media-breakpoint-down(xs)
+    .header
+        &__popup-menu
+            width: 100%
+            
+    .consultation
+        border-bottom: 1px solid rgba(235,235,235, .7)
+        &__background
+            width: 100vw
+            height: 100vw
+            right: -218px
+            top: -27%
+            transform: rotate(34deg)
+            border-radius: 65px
+        &__content
+            display: flex
+            flex-direction: column
+            left: 0
+            padding: 0 15px
+            h1
+                font-size: 18px
+            p
+                font-size: 12px
+                max-width: 400px
+            a
+                background-image: linear-gradient(to right,#ff9c26 0,#ff563d 71%,#e72d47 100%)
+                order: 1
+                padding-left: 0
+                padding-right: 0
+                padding-top: 12px
+                padding-bottom: 12px
+                margin-bottom: 0
+                margin-top: 32px
+                width: 100%
+                span
+                    color: #fff
+                span.arrow
+                    display: none
+                    
+@media screen and (max-width: 425px)
+        .consultation
+            &__background
+                top: -15%
+                right: -120px
+                border-radius: 50px
+                transform: rotate(24deg)
+                
