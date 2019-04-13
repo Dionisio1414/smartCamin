@@ -25,6 +25,25 @@
         &__caption 
             h3
                 margin-left: 3.177vw
+                
+    .footer
+        &__contacts 
+            ul 
+                li
+                    margin-right: 15px
+                    a
+                        svg
+                            width: 20px
+                            height: 20px
+            .sub-container
+                div
+                    &:first-child
+                        margin-right: 10px
+                    &:last-child
+                        margin-left: 10px
+                .space
+                    font-size: 26px
+                    
         
 @media screen and (max-width: 1440px)
     .header
@@ -48,6 +67,13 @@
                         font-size: 66px
                     &:last-child
                         font-size: 55px
+                    
+    .gallery
+        &__wrapper
+            &::after
+                top: -144px
+                right: -83px
+                transform: rotate(-17deg)
             
             
 @media screen and (max-width: 1366px)
@@ -83,6 +109,13 @@
             .desc 
                 h4
                     font-size: 16px
+                    
+                    
+    .gallery 
+        .image
+            max-height: 250px
+            &.main
+                max-height: 530px
             
             
 +media-breakpoint-down(lg)
@@ -119,7 +152,34 @@
         &__caption 
             h3
                 font-size: 26px
-    
+                
+    .gallery 
+        .image
+            max-height: 190px
+            &.main
+                max-height: 410px
+        &__wrapper
+            &::after
+                top: -115px
+                right: -72px
+                transform: rotate(-17deg)
+        &__logo 
+            img
+                width: 50px
+        &__caption 
+            h3
+                font-size: 21px
+                
+                
+    .footer
+        &__contacts 
+            .sub-container
+                flex-direction: column
+                .space
+                    display: none
+                    
+                    
+                
 +media-breakpoint-down(md)
     .header
         &__hamburger-menu
@@ -180,6 +240,18 @@
             margin-bottom: 70px
             &::before
                 display: none
+                    
+    .gallery 
+        .image
+            max-height: 134px
+            &.main
+                max-height: 299px 
+        &__wrapper
+            &::after
+                top: -97px
+                right: -72px
+                transform: rotate(-18deg)
+            
     
 +media-breakpoint-down(sm)
     .header
@@ -204,6 +276,26 @@
             right: -300px
             top: -41%
             border-radius: 145px
+            
+    .service
+        &__item 
+            .desc 
+                h4
+                    font-size: 14px
+                p
+                    font-size: 12px
+            .image
+                img
+                    height: 339px
+                    
+    .footer
+        &__socials 
+            li
+                margin-right: 15px
+                a
+                    svg
+                        width: 24px
+                        height: 17px
 
 +media-breakpoint-down(xs)
     .header
@@ -263,6 +355,7 @@
                             float: right
 
     .steps
+        margin-bottom: 226px
         &__tabs-slider
             .slick-slide
                 text-align: left
@@ -289,6 +382,51 @@
             text-align: left
             p
                 font-size: 12px
+                
+    .service
+        &__desc
+            margin-bottom: 40px
+            h2
+                font-size: 16px
+            p
+                font-size: 12px
+                line-height: 19px
+            a
+                display: none
+        &__item
+            height: 408px
+            .image
+                img
+                    height: 408px
+            .desc 
+                h4
+                    max-width: 252px
+            &.bigger
+                height: 408px
+                .image
+                    height: 408px
+                + a
+                    display: block
+                    text-align: center
+                    margin-top: 30px
+                    
+    .footer
+        &__socials
+            li
+                margin-right: 10px
+        &__contacts 
+            .sub-container 
+                margin-bottom: 23px
+                a
+                    font-size: 14px
+                div
+                    &:first-child
+                        margin: 0
+                    &:last-child
+                        margin: 0
+        &__created 
+            span
+                display: none
                     
 @media screen and (max-width: 425px)
         .header
@@ -308,6 +446,8 @@
                         top: 8px
                     &:nth-child(4)
                         top: 16px
+            &__popup-menu
+                position: fixed
 
         .consultation
             &__background
@@ -327,6 +467,10 @@
                 bottom: -54%
                 left: -254px
                 transform: rotate(56deg)
+            
+        .service
+            &__desc
+                margin-top: 20px
 
 @media screen and (max-width: 375px)
     .consultation

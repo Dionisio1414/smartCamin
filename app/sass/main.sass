@@ -60,6 +60,50 @@ h3
 main
     overflow: hidden
     
+
+/*  Modal form */
+
+.modal-form
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: #fff
+    width: 340px
+    padding: 30px 25px
+    z-index: 35
+    .modal-close
+        position: absolute
+        top: 37px
+        right: 33px
+        cursor: pointer
+    .modal-top
+        h2
+            font-family: $bold
+            font-size: 18px
+            letter-spacing: .9px
+            color: $accent
+        p
+            font-family: $semibold
+            font-size: 12px
+            letter-spacing: -.12px
+            line-height: 19px
+            color: $text
+    .modal-bottom
+        input
+            border-radius: 30px
+            border: 1px solid #707070
+            width: 100%
+            &::placeholder
+                font-family: $semibold
+                font-size: 12px
+                letter-spacing: -.12px
+                color: $text
+                color: #707070
+
+/*  End modal form */    
+    
+    
 /* HEADER */
 
 .header
@@ -475,6 +519,10 @@ main
                 img
                     max-height: none
                     height: 100%
+            + a
+                +feedback-btn
+                display: none
+                margin-left: 0
         .desc
             background-color: #fff
             width: 100%
@@ -562,14 +610,16 @@ main
     .image
         display: block
         max-height: 337px
-        height: 317px
+        height: 337px
         transition: all .35s ease
         img
             filter: brightness(100%)
+            height: 100%
+            width: 100%
             transition: all .35s ease
         &.main
-            max-height: 713px
-            height: 611px
+            max-height: 704px
+            height: 704px
         &.top
             margin-bottom: 30px
         &:hover
@@ -599,23 +649,23 @@ main
             font-size: 12px
             letter-spacing: .78px
             color: #fff
+    &__socials
+        padding: 0
+        margin: 0
+        list-style-type: none
+        display: inline-block
+        li
+            display: inline-block
+            margin-right: 34px
+            &:last-child
+                margin-right: 0
+            &:hover
+                a
+                    svg
+                        use
+                            fill: #ffc8b2
     &__contacts
         margin-bottom: 31px
-        ul
-            padding: 0
-            margin: 0
-            list-style-type: none
-            display: inline-block
-            li
-                display: inline-block
-                margin-right: 34px
-                &:last-child
-                    margin-right: 0
-                &:hover
-                    a
-                        svg
-                            use
-                                fill: #ffc8b2
         .sub-container
             display: -webkit-flex
             display: -moz-flex
