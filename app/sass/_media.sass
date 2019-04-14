@@ -193,6 +193,12 @@
                     a
                         font-size: 14px
                         color: #000
+        &__logo
+            img
+                &.desktop
+                    display: none
+                &.mobile
+                    display: block
         &__popup-menu
             display: none!important
             position: absolute
@@ -258,12 +264,7 @@
         &__popup-menu
             width: 60%
         &__logo
-            a
-                svg
-                    use:not(:first-of-type)
-                        display: none
-                    g
-                        display: none    
+             
     .consultation
         height: 675px
         border-bottom: 1px solid rgba(235,235,235, .7)
@@ -287,6 +288,27 @@
             .image
                 img
                     height: 339px
+    .gallery
+        &__arrows
+            display: block
+        &__caption 
+            h3
+                max-width: 200px
+        &__wrapper
+            &::after
+                width: 100%
+                height: 100%
+                transform: rotate(-27deg)
+                top: -145px
+                right: -240px
+        .gallery-slider
+            &.desktop
+                display: none
+            &.mobile
+                display: block!important
+            .image
+                max-height: none
+                height: 511px
                     
     .footer
         &__socials 
@@ -338,9 +360,10 @@
                 span.arrow
                     display: none
     .experience
-        margin-top: 190px
+        margin-top: 100px
         margin-bottom: 100px
         &__content 
+            margin-top: 100px
             h3
                 font-size: 16px
             p
@@ -359,6 +382,12 @@
         &__tabs-slider
             .slick-slide
                 text-align: left
+                padding-top: 20px
+                padding-bottom: 20px
+                div 
+                    div 
+                        a
+                            font-size: 14px
         &__tabs-slider-arrows
             justify-content: flex-end
             height: 100%
@@ -410,6 +439,26 @@
                     text-align: center
                     margin-top: 30px
                     
+    .gallery 
+        &__caption 
+            margin-bottom: 40px
+            h3
+                max-width: 162px
+                font-size: 16px
+        &__wrapper
+            &::after
+                width: 60%
+                height: 50%
+                top: -100px
+                right: -117px
+                transform: rotate(59deg)
+                border-radius: 0
+        &__logo 
+            img
+                width: auto
+        .gallery-slider 
+            .image
+                    
     .footer
         &__socials
             li
@@ -431,7 +480,7 @@
 @media screen and (max-width: 425px)
         .header
             &__logo
-                img
+                img.mobile
                     display: block
                 a
                     svg
@@ -471,9 +520,22 @@
         .service
             &__desc
                 margin-top: 20px
+                
+        .gallery
+            &__wrapper
+                &::after
+                    right: -50px
+                    transform: rotate(64deg)
+                    
 
 @media screen and (max-width: 375px)
     .consultation
         &__background
             top: -27%
             right: -125px
+            
+    .gallery
+        &__wrapper
+            &::after
+                top: -127px
+                transform: rotate(64deg)

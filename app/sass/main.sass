@@ -71,17 +71,22 @@ main
     background-color: #fff
     width: 340px
     padding: 30px 25px
+    opacity: 0
+    display: none
     z-index: 35
     .modal-close
         position: absolute
-        top: 37px
-        right: 33px
+        top: 20px
+        right: 27px
         cursor: pointer
     .modal-top
+        margin-top: 30px
+        margin-bottom: 32px
         h2
             font-family: $bold
             font-size: 18px
             letter-spacing: .9px
+            margin-bottom: 14px
             color: $accent
         p
             font-family: $semibold
@@ -90,9 +95,22 @@ main
             line-height: 19px
             color: $text
     .modal-bottom
+        .list-service
+            position: relative
+            img
+                position: absolute
+                top: 11px
+                right: 17px
+                transform: rotate(90deg)
+                width: 8px
         input
+            font-family: $semibold
+            font-size: 12px
+            text-align: center
             border-radius: 30px
             border: 1px solid #707070
+            padding: 8px
+            margin-bottom: 19px
             width: 100%
             &::placeholder
                 font-family: $semibold
@@ -100,6 +118,78 @@ main
                 letter-spacing: -.12px
                 color: $text
                 color: #707070
+        button
+            +feedback-btn
+            margin: 0
+            border: none
+            outline: none
+            padding-top: 12px
+            padding-bottom: 12px
+            width: 100%
+        .service-select
+            display: none
+            background-color: #fff
+            padding: 0
+            margin: 0
+            list-style-type: none
+            position: relative
+            box-shadow: 0 28px 47px rgba(255, 200, 178, 0.22)
+            margin-bottom: 20px
+            padding: 30px 5px
+            li
+                input
+                    position: absolute
+                    z-index: -1
+                    opacity: 0
+                    margin: 10px 0 0 20px
+                    + label
+                        position: relative
+                        width: 100%
+                        cursor: pointer
+                        span
+                            position: absolute
+                            left: 26px
+                            top: -6px
+                            font-size: 11px
+                            color: #707070
+                        &::before
+                            content: ''
+                            position: absolute
+                            top: -4px
+                            left: 0
+                            width: 15px
+                            height: 15px
+                            border-radius: 4px
+                            border: 1px solid #707070
+                            box-shadow: inset 0 2px 3px rgba(0,0,0,.2)
+                            transition: .2s
+                        &::after
+                            content: '\2713'
+                            font-size: 12px
+                            position: absolute
+                            top: -6px
+                            left: 3px
+                            color: transparent
+                            transition: .5s
+                    &:checked
+                        + label
+                            &::after
+                                color: $accent
+            
+.modal-overlay
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: #000
+    width: 100%
+    height: 100%
+    opacity: .35
+    z-index: 30
+    opacity: 0
+    display: none
+    cursor: pointer
 
 /*  End modal form */    
     
@@ -112,7 +202,7 @@ main
     z-index: 1
     transition: all .35s ease
     &__logo
-        img
+        img.mobile
             display: none
         svg
             height: 90px
@@ -593,7 +683,7 @@ main
             top: -161px
             right: -88px
             width: 65%
-            height: 50%
+            height: 58%
             background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
             background-size: 400% 400%
             animation: Gradient 7s ease infinite
@@ -632,6 +722,29 @@ main
         margin-bottom: 45px
         img
             position: relative
+            
+    .gallery-slider
+        &.mobile
+            display: none
+    &__arrows
+        display: none
+        position: absolute
+        top: 12px
+        width: 100%
+        ul
+            padding: 0
+            margin: 0
+            list-style-type: none
+            display: flex
+            justify-content: space-between
+            width: 100%
+            pointer-events: none
+            li
+                pointer-events: visible
+                &:first-child
+                    margin-left: 15px
+                &:last-child
+                    margin-right: 15px
 
 /* End gallery */
 
