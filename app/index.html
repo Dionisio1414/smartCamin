@@ -14,7 +14,7 @@
 	
 	<!-- Template Basic Images Start -->
 <!--	<meta property="og:image" content="path/to/image.jpg">-->
-<!--	<link rel="icon" href="img/favicon/favicon.ico">-->
+	<link rel="icon" href="img/favicon.ico">
 <!--	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">-->
 	<!-- Template Basic Images End -->
 	
@@ -34,10 +34,14 @@
             <img src="img/icons/close.svg" alt="">
         </span>
         <div class="modal-top">
-            <h2>ВАШИ КОНТАКТЫ</h2>
-            <p>Suspendisse sit amet elit at est porttitor dictum. Aliquam condimentum gravida ullamcorper. Nullam vitae consequat</p>
+            <h2>ЗАПОЛНИТЕ ФОРМУ</h2>
+            <p>Введите Ваше имя и номер телефона, чтобы отправить заявку.</p>
         </div>
         <div class="modal-bottom">
+           <div class="success-message">
+               <p>Ваша заявка успешно отправлена.</p> 
+               <p>Ожидайте звонок нашего специалиста.</p>
+           </div>
             <form>
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Имя*">
@@ -53,8 +57,8 @@
             <img src="img/icons/close.svg" alt="">
         </span>
         <div class="modal-top">
-            <h2>ВАШИ КОНТАКТЫ</h2>
-            <p>Suspendisse sit amet elit at est porttitor dictum. Aliquam condimentum gravida ullamcorper. Nullam vitae consequat</p>
+            <h2>Заказать услугу</h2>
+            <p>Заполните все необходимые поля для заказа услуги.</p>
         </div>
         <div class="modal-bottom">
             <form>
@@ -63,7 +67,7 @@
                     <input type="text" name="telephone" placeholder="Телефон*">
                     <input type="email" name="email" placeholder="Email">
                     <div class="list-service">
-                        <input type="text" name="service" placeholder="Список услуг"> 
+                        <input type="text" name="service" placeholder="Список услуг" readonly> 
                         <img src="img/icons/arrow-slide-next.svg" alt="">
                     </div>
                     <ul class="service-select">
@@ -88,6 +92,7 @@
                             <label for="doors"><span>Производство и установка каминных дверок</span></label>
                         </li>
                     </ul>
+                    <textarea name="comment" id="comment" placeholder="Комментарий"></textarea>
                     <button type="submit">ОТПРАВИТЬ</button>
                 </div>
             </form>
@@ -102,7 +107,7 @@
                 <div class="row">
                    <div class="col-3">
                        <div class="header__logo">
-                           <a href="#">
+                           <a href="index.html">
                                 <img src="img/logo-mobile.svg" class="img-responsive mobile" alt="">
                                 <img src="img/logo.png" class="img-responsive desktop" alt="">
                            </a>
@@ -170,8 +175,8 @@
                                 <img src="img/icons/arrow-right.svg" alt="">
                             </span>
                         </a>
-                        <h1>MODERN FIREPLACE</h1>
-                        <p>Suspendisse sit amet elit at est porttitor dictum. Aliquam condimentum gravida ullamcorper. Nullam vitae consequat</p>
+                        <h1>Камины по индивидуальным проектам с гарантией</h1>
+                        <p>Тепло, теплее, горячо: звоните сейчас и всего через 3 недели Ваш дом будет согревать жар живого огня!</p>
                     </div>
                 </div>
             </div>
@@ -185,17 +190,40 @@
                 <div class="row">
                     <div class="col-12 col-lg-12 col-xl-6 pl-md-0">
                         <div class="experience__carousel" id="carousel">
-                                <img src="img/slide-image.png" class="carousel-image" alt="">
-                                <img src="img/slide-image.png" class="carousel-image" alt="">
-                                <img src="img/slide-image.png" class="carousel-image" alt="">
+                                <img src="img/about-us-1.jpg" class="carousel-image" alt="">
+                                <img src="img/about-us-2.jpg" class="carousel-image" alt="">
+                                <img src="img/about-us-3.jpg" class="carousel-image" alt="">
+                                <img src="img/about-us-4.jpg" class="carousel-image" alt="">
                         </div>
                     </div>
                     <div class="col-12 col-lg-12 col-xl-6">
                         <div class="experience__content">
-                            <h3>ОПЫТ</h3>
-                            <p>
-                                Мы работаем в данной сфере с 2010 года. Нами построено порядка 250 каминов, 40 саун, установлено более 100 каминофенов и печей и смонтировано около 300 дымоходв. Основываясь на таком фундаменте знаний, Мы работаем качественно и быстро.
-                            </p>
+                            <div class="slide-content">
+                                <div>
+                                    <h3>700+ успешных проектов</h3>
+                                    <p>
+                                        За время прошедшее со дня основания компании в 2010 году, мы построили свыше 250 каминов, оборудовали 40 саун, установили более 100 каминофенов и печей, а также смонтировали около 300 дымоходов, что дает нам право называть себя опытными специалистами, которые умеют работать быстро и качественно. 
+                                    </p>
+                                </div>                                
+                                <div>
+                                    <h3>Честные цены</h3>
+                                    <p>
+                                        Мы не сотрудничаем с брендами-производителями оборудования для каминов и систем отопления и не навязываем лишние услуги. Наш главный приоритет — подобрать оптимальное решение для конкретной ситуации с учетом Вашего бюджета, пожеланий и особенностей проекта.
+                                    </p>
+                                </div>                                
+                                <div>
+                                    <h3>Комплексное сопровождение</h3>
+                                    <p>
+                                       Строительство камина или сауны, установка каминофена или монтаж дымохода — сложные технические задачи, требующие специфических навыков и знаний. Мы выполняем работы под ключ: от консультации, подбора и покупки оборудования, до разработки дизайн-проекта и его реализации.
+                                    </p>
+                                </div>                                
+                                <div>
+                                    <h3>Гарантийное и сервисное обслуживание</h3>
+                                    <p>
+                                        Стандартная гарантия на все услуги — 5 лет, но вы всегда можете обратиться к нам за помощью в поиске деталей и оборудования, и их замене. Мы всегда готовы помочь с футеровкой топок, заменой разбитого стекла и другим ремонтом, а также чисткой дымохода и прочими профилактическими работами.
+                                    </p>
+                                </div>
+                            </div>
                             <div class="slider-pagination">
                                 <ul>
                                     <li id="carousel-left" class="prev">
@@ -235,7 +263,7 @@
                             </div>
                             <div class="steps__description">
                                 <p>
-                                    Вашего номера телефона мы не знаем, так что первый шаг придется сделать Вам. На данном этапе мы получаем вводную информацию (этап строительства, Ваши пожелания, планы на будущее, и т.д.), консультируем в удаленном режиме и договариваемся о встрече.
+                                    Получите быструю бесплатную консультацию: позвоните нам, расскажите на каком этапе строительство, поделитесь идеями и планами, чтобы узнать больше о каминных системах и договориться о сотрудничестве. 
                                 </p>
                             </div>
                         </div>     
@@ -246,8 +274,7 @@
                                 <h4>Встреча.</h4>
                             </div>
                             <div class="steps__description">
-                                <p>
-                                «Лучше один раз увидеть чем сто раз услышать», поэтому скорее всего она произойдет у Вас на объекте. Мы производим замеры, сужаем круг возможных вариантов, отталкиваясь от существующих реалии, подбираем оборудование, определяемся с концепцией.
+                                <p>Назначайте удобное время для общения со специалистами и участвуйте в разработке концепта каминной системы: мы проведем замеры и поможем выбрать оборудование с учетом особенностей объекта и Ваших пожеланий.
                                 </p>
                             </div>
                         </div>           
@@ -258,9 +285,7 @@
                                 <h4>Смета.</h4>
                             </div>
                             <div class="steps__description">
-                                <p>
-                                  На основе замеров и выбранного оборудования, производим предварительный расчет необходим финансовых вливаний для реализации Вашего проекта. По времени занимает порядка двух дней.
-
+                                <p>Через 48 часов Вы получите подробную смету монтажа каминной системы, где будут указаны ожидаемые расходы на оборудование, материалы, декоративную составляющую и стоимость проведения всех необходимых работ.
                                 </p>
                             </div>
                         </div>
@@ -272,7 +297,7 @@
                             </div>
                             <div class="steps__description">
                                 <p>
-                                    Это этап закупки оборудования (каминной топки, каминофена, буржуйки, банной печи), изоляционных и других необходимых строительных материалов, компоновки и производства дымохода,   с последующим завозом их на объект. Параллельно ведется работа с дизайнером для  утверждения рабочих чертежей. Из практики, занимает порядка одной рабочей недели при условии наличия оборудования в Украине. Требует финансовых вливаний согласно утвержденной сметы в полном объеме на оборудование и материалы.
+                                    Утверждайте рабочие чертежи, оплачивайте оборудование и материалы согласно смете, а мы займемся закупкой и доставкой. Стандартный срок подготовки — 7 дней, если выбранные Вами компоненты в наличии в Украине. 
                                 </p>
                             </div>
                         </div>
@@ -284,7 +309,7 @@
                             </div>
                             <div class="steps__description">
                                 <p>
-                                    Реализация проекта согласно чертежам и визуализации. Занимает порядка двух рабочих недель, в зависимости от сложности.
+                                    Наблюдайте, как работают профессионалы: максимум через 14 дней Вы станете обладателем полностью готового к эксплуатации камина, построенного в полном соответствии с утвержденными чертежами и визуализацией.
                                 </p>
                             </div>
                         </div>
@@ -295,8 +320,7 @@
                                 <h4>Фактическая смета.</h4>
                             </div>
                             <div class="steps__description">
-                                <p>
-                                    Производиться пересчет сметы основываясь на информации о фактически использованных материалах. Из практики, имеет  отклонения от первоначальной сметы в пределах 5%, и обычно в меньшую сторону
+                                <p>Платите только за реально использованные материалы: как показывает практика, фактический бюджет оборудования каминной системы, будет отличаться от предварительных расчетов на 5%, и обычно в меньшую сторону.
                                 </p>
                             </div>
                         </div>
@@ -308,7 +332,7 @@
                             </div>
                             <div class="steps__description">
                                 <p>
-                                   Здесь происходит проверка работоспособности системы в целом, и проводиться  инструктаж по ее безопасной эксплуатации в будущем.
+                                   Посмотрите, как работает система, убедитесь, что все функционирует как надо и попробуйте запустить и отрегулировать ее самостоятельно вместе со специалистом, инструктором по безопасности эксплуатации.
                                 </p>
                             </div>
                         </div>
@@ -320,7 +344,7 @@
                             </div>
                             <div class="steps__description">
                                 <p>
-                                    Согласно фактической смете.
+                                    Оплатите оставшуюся часть затрат по смете: рассчитайтесь со специалистами, проводившими работы и внесите плату за дополнительные расходы. Получите гарантию и наслаждайтесь теплом и уютной атмосферой в доме.
                                 </p>
                             </div>
                         </div>
@@ -358,7 +382,7 @@
                             <div class="col-12">
                                 <div class="service__desc">
                                     <h2>НАШИ УСЛУГИ</h2>
-                                    <p>Мы работаем в данной сфере с 2010 года. Нами построено порядка 250 каминов, 40 саун, установлено более 100 каминофенов и печей и смонтировано около 300 дымоходв. Основываясь на таком фундаменте знаний, Мы работаем качественно и быстро.</p>
+                                    <p>«Smart Kamin» — это 10 лет опыта и более 700 довольных владельцев энергетически независимых и производительных систем автономного отопления, органично вписывающихся в дизайн интерьера и создающих теплую и уютную атмосферу домашнего очага.</p>
                                     <a href="#">ЗАКАЗАТЬ УСЛУГУ</a>
                                 </div>
                             </div>
@@ -368,8 +392,8 @@
                                         <img src="img/service-item-1.jpg" class="img-responsive" alt="">
                                     </div>
                                     <div class="desc">
-                                        <h4>Монтаж воздушных каминов</h4>
-                                        <p>В первую очередь камин — это эстетическое наслаждение, но современные каминные топки это еще и достаточно эффективное отопление, их КПД на сегодняшний день достигает 85%. Именно такие высокоэффективные топки мы и рекомендуем нашим Клиентам. Их основное преимущество — энергонезависимость, это значит, что чтобы не случилось Ваш дом всегда будет теплым.  Также, при желании можно реализовать распределение тепла в смежные помещения, для охвата большей отапливаемой площади. </p>
+                                        <h4>Монтаж воздушных каминов под ключ</h4>
+                                        <p>Огромный выбор дизайнерских решений для интерьеров в любом стиле, КПД обогрева 85% и энергонезависимость — главные причины выбрать камин с воздушным контуром для дачи или загородного коттеджа. Такая энергоэффективная система отлично справляется с отоплением одного или нескольких смежных помещений и гарантирует, что в доме всегда будет тепло.</p>
                                     </div>
                                 </div>
                             </div>
@@ -380,7 +404,7 @@
                                     </div>
                                     <div class="desc">
                                         <h4>Монтаж  каминов с водяной рубашкой</h4>
-                                        <p>Камин с водяной рубашкой — это аналог твердотопливного котла. Его основное преимущество - это возможность интеграции в существующую отопительную систему дома, тем самым во время работы способен снабжать теплом самые удаленные уголки дома. Технически более сложная задача чем воздушный камин,  но тоже неоднократно реализованная нашими специалистами.</p>
+                                        <p>Камин с водяным контуром — это твердотопливный котел только красивее! Мы можем подключить к его существующей отопительной системе или сделать основой новой сети, которая обогреет до 400м2 и будет работать как бойлер, нагревая воду для бытовых нужд или теплого пола. Оборудование водного контура сложнее, чем воздушного, но мы неоднократно решали такие задачи.</p>
                                     </div>
                                 </div>
                             </div>
@@ -397,7 +421,7 @@
                                             </div>
                                             <div class="desc">
                                                 <h4>Производство и установка каминных дверок </h4>
-                                                <p>Если у Вас уже есть кирпичный камин, он «поддымливает» в помещение, работает как «большая вытяжка», выбрасывающая все «драгоценное» тепло на улицу, или же Вы хотите его сделать хоть чучуть экономичнее — это Ваш выбор. Дверка делается по индивидуальным размерам, поэтому подходит к любому камину.</p>
+                                                <p>Уменьшение расхода топлива, повышение КПД обогрева и защита от дыма в помещении — сложные задачи с простым решением! Грамотно спроектированные, произведенные и установленные специалистами дверки — разумная инвестиция для рациональных обладателей кирпичных каминов, вне зависимости от оригинальности дизайна и любых других особенностей системы отопления.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -408,7 +432,7 @@
                                             </div>
                                             <div class="desc">
                                                 <h4>Строительство саун под ключ.</h4>
-                                                <p>Мы занимаемся внутренней отделкой сауны. Все что касается утепления , вентиляции, освещения, вагонки, полков и каменки будь то электрическая или дровяная — эта наша работа.</p>
+                                                <p>Установка печи каменки электрического или дровяного типа и обустройство эффективной вентиляции — только базовая часть задач по сооружению бани, которые мы выполняем параллельно с утеплением, электромонтажными работами и отделкой вагонкой, в том числе сборкой полков, а также другими материалами. Мы знаем все о строительстве уютных частных бань и окупающихся коммерческих проектов.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -423,7 +447,7 @@
                                             </div>
                                             <div class="desc">
                                                 <h4>Монтаж дымоотводных систем.</h4>
-                                                <p>Если Вы надумали установить твердотопливный или газовый котел, буржуйку, каминофен, или Вам нужно установить дровяную каменку  в бане или сауне, то Вы попали по адресу. Мы осуществляем «гильзовку» и утепление кирпичных шахт, монтаж дымоходов из «сендвич» труб  любой сложности, а так же строительство керамических дымоходов.</p>
+                                                <p>Утепление кирпичных шахт, строительство дымоходов любой сложности из сэндвич-труб и керамических, «гильзовка» и другие работы, без которых не обойтись тем, кто решил установить твердотопливный или газовый котел, буржуйку, каминофен, и даже дровяную каменку в бане или сауне — важная и востребованная часть наших услуг, которые мы выполняем ответственно и с гарантией качества.</p>
                                             </div>
                                         </div>
                                         <a href="#">Заказать услугу</a>
@@ -505,37 +529,37 @@
                                 <div class="col-4">
                                     <div class="row">
                                         <div class="col-12">
-                                            <a href="img/gallery/gallery-1.jpg" data-lightbox="roadtrip"  class="image top">
-                                                <img src="img/gallery/gallery-1.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slide-2/gallery-1.jpg" data-lightbox="roadtrip"  class="image top">
+                                                <img src="img/gallery/slide-2/gallery-1.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                         <div class="col-6">
-                                            <a href="img/gallery/gallery-2.jpg" data-lightbox="roadtrip"  class="image">
-                                                <img src="img/gallery/gallery-2.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slide-2/gallery-2.jpg" data-lightbox="roadtrip"  class="image">
+                                                <img src="img/gallery/slide-2/gallery-2.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                         <div class="col-6">
-                                            <a href="img/gallery/gallery-3.jpg" data-lightbox="roadtrip"  class="image">
-                                                <img src="img/gallery/gallery-3.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slide-2/gallery-3.jpg" data-lightbox="roadtrip"  class="image">
+                                                <img src="img/gallery/slide-2/gallery-3.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <a href="img/gallery/gallery-4.png" data-lightbox="roadtrip" class="image main">
-                                        <img src="img/gallery/gallery-4.png" class="img-responsive" alt="">
+                                    <a href="img/gallery/slide-2/gallery-4.jpg" data-lightbox="roadtrip" class="image main">
+                                        <img src="img/gallery/slide-2/gallery-4.jpg" class="img-responsive" alt="">
                                     </a>
                                 </div>
                                 <div class="col-4">
                                     <div class="row">
                                         <div class="col-12">
-                                            <a href="img/gallery/gallery-5.jpg" data-lightbox="roadtrip" class="image top">
-                                                <img src="img/gallery/gallery-5.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slide-2/gallery-5.jpg" data-lightbox="roadtrip" class="image top">
+                                                <img src="img/gallery/slide-2/gallery-5.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                         <div class="col-12">
-                                            <a href="img/gallery/gallery-6.jpg" data-lightbox="roadtrip"  class="image">
-                                                <img src="img/gallery/gallery-6.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slide-2/gallery-6.jpg" data-lightbox="roadtrip"  class="image">
+                                                <img src="img/gallery/slide-2/gallery-6.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -549,37 +573,37 @@
                                 <div class="col-4">
                                     <div class="row">
                                         <div class="col-12">
-                                            <a href="img/gallery/gallery-1.jpg" data-lightbox="roadtrip"  class="image top">
-                                                <img src="img/gallery/gallery-1.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slider-3/gallery-1.jpg" data-lightbox="roadtrip"  class="image top">
+                                                <img src="img/gallery/slider-3/gallery-1.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                         <div class="col-6">
-                                            <a href="img/gallery/gallery-2.jpg" data-lightbox="roadtrip"  class="image">
-                                                <img src="img/gallery/gallery-2.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slider-3/gallery-2.jpg" data-lightbox="roadtrip"  class="image">
+                                                <img src="img/gallery/slider-3/gallery-2.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                         <div class="col-6">
-                                            <a href="img/gallery/gallery-3.jpg" data-lightbox="roadtrip"  class="image">
-                                                <img src="img/gallery/gallery-3.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slider-3/gallery-3.jpg" data-lightbox="roadtrip"  class="image">
+                                                <img src="img/gallery/slider-3/gallery-3.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <a href="img/gallery/gallery-4.png" data-lightbox="roadtrip" class="image main">
-                                        <img src="img/gallery/gallery-4.png" class="img-responsive" alt="">
+                                    <a href="img/gallery/slider-3/gallery-4.jpg" data-lightbox="roadtrip" class="image main">
+                                        <img src="img/gallery/slider-3/gallery-4.jpg" class="img-responsive" alt="">
                                     </a>
                                 </div>
                                 <div class="col-4">
                                     <div class="row">
                                         <div class="col-12">
-                                            <a href="img/gallery/gallery-5.jpg" data-lightbox="roadtrip" class="image top">
-                                                <img src="img/gallery/gallery-5.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slider-3/gallery-5.jpg" data-lightbox="roadtrip" class="image top">
+                                                <img src="img/gallery/slider-3/gallery-5.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                         <div class="col-12">
-                                            <a href="img/gallery/gallery-6.jpg" data-lightbox="roadtrip"  class="image">
-                                                <img src="img/gallery/gallery-6.jpg" class="img-responsive" alt="">
+                                            <a href="img/gallery/slider-3/gallery-6.jpg" data-lightbox="roadtrip"  class="image">
+                                                <img src="img/gallery/slider-3/gallery-6.jpg" class="img-responsive" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -617,6 +641,66 @@
                     <div>
                         <a href="img/gallery/gallery-6.jpg" data-lightbox="roadtrip"  class="image">
                             <img src="img/gallery/gallery-6.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>                    
+                    <div>
+                        <a href="img/gallery/slide-2/gallery-1.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slide-2/gallery-1.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>
+                    <div>
+                        <a href="img/gallery/slide-2/gallery-2.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slide-2/gallery-2.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>
+                    <div>
+                        <a href="img/gallery/slide-2/gallery-3.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slide-2/gallery-3.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>
+                    <div>
+                        <a href="img/gallery/slide-2/gallery-4.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slide-2/gallery-4.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>
+                    <div>
+                        <a href="img/gallery/slide-2/gallery-5.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slide-2/gallery-5.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>
+                    <div>
+                        <a href="img/gallery/slide-2/gallery-6.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slide-2/gallery-6.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>
+                    <div>
+                        <a href="img/gallery/slider-3/gallery-1.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slider-3/gallery-1.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>
+                    <div>
+                        <a href="img/gallery/slider-3/gallery-2.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slider-3/gallery-2.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>                    
+                    <div>
+                        <a href="img/gallery/slider-3/gallery-3.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slider-3/gallery-3.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>                    
+                    <div>
+                        <a href="img/gallery/slider-3/gallery-4.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slider-3/gallery-4.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>                    
+                    <div>
+                        <a href="img/gallery/slider-3/gallery-5.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slider-3/gallery-5.jpg" class="img-responsive" alt="">
+                        </a>    
+                    </div>                    
+                    <div>
+                        <a href="img/gallery/slider-3/gallery-6.jpg" data-lightbox="roadtrip"  class="image">
+                            <img src="img/gallery/slider-3/gallery-6.jpg" class="img-responsive" alt="">
                         </a>    
                     </div>
                 </div>
@@ -667,13 +751,15 @@
                 <div class="row">
                      <div class="col-6 col-xl-6">
                          <div class="footer__copyright">
-                             <span>© loremipsum 2019</span>
+                             <span>© Smart kamin 2019</span>
                          </div>
                      </div>
                      <div class="col-6 col-xl-6">
                          <div class="footer__created">
+                            <a href="https://apri-code.com" target="_blank">
                              <span>Website by</span>
-                             <img src="img/apricode-logo.svg" alt="">
+                                 <img src="img/apricode-logo.svg" alt="">
+                             </a>
                          </div>
                      </div>
                 </div>
@@ -682,4 +768,13 @@
     </main>
     
     <script src="js/scripts.min.js"></script>
+    <script>
+        lightbox.option({
+            showImageNumberLabel: false
+        });
+        
+        $(document).ready(function() {
+            console.log($('.experience__carousel .carousel-image').find('.carousel-center').index()); 
+        });
+    </script>
 </body>

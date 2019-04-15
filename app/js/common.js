@@ -2,18 +2,18 @@ $(function() {
     var $globalIndex;
     
     var resolution_1 = {
-        forcedImageWidth: 450,
-        forcedImageHeight: 550
-    }
-
-    var resolution_2 = {
         forcedImageWidth: 400,
         forcedImageHeight: 500
     }
 
+    var resolution_2 = {
+        forcedImageWidth: 320,
+        forcedImageHeight: 400
+    }
+
     var resolution_3 = {
-        forcedImageWidth: 350,
-        forcedImageHeight: 450
+        forcedImageWidth: 300,
+        forcedImageHeight: 400
     }
 
     var resolution_4 = {
@@ -22,12 +22,7 @@ $(function() {
         flankingItems: 1
     }    
 
-    $('#carousel').waterwheelCarousel({
-        movingToCenter: function() {
-            $globalIndex = $('.experience__carousel > img.carousel-image.carousel-center').index();
-            setTimeout(function() { console.log($globalIndex); }, 1500)
-        }
-    });
+    $('#carousel').waterwheelCarousel(resolution_1);
     
     if($(window).width() < 1600) {
         $('#carousel').waterwheelCarousel(resolution_1);
@@ -52,17 +47,6 @@ $(function() {
     if($(window).width() < 576) {
         $('#carousel').waterwheelCarousel(resolution_4);
     }
-
-    var $carouselExp = $('#carousel').waterwheelCarousel(); 
-    $('.experience__content .slider-pagination ul li.next a').click(function() {
-        $carouselExp.next();
-        return false;
-    });
-    
-    $('.experience__content .slider-pagination ul li.prev a').click(function() {
-        $carouselExp.prev();
-        return false;
-    });
     
     var $carouselItems = $('.experience__carousel > img'),
         $paginationArea = $('.experience__content .slider-pagination ul li.prev'),
@@ -109,10 +93,43 @@ $(function() {
         ]
     });
     
+    var $carouselExp = $('#carousel').waterwheelCarousel(), $sliderExp =  $('.experience__content .slide-content'); 
+    
+    $sliderExp.slick({
+        slidesToShow: 1,
+        swipe: false,
+        prevArrow: $('.experience__content .slider-pagination ul li.prev'),
+        nextArrow: $('.experience__content .slider-pagination ul li.next')
+    });
+    
+    $('.experience__content .slider-pagination ul li.next a').click(function() {
+        $carouselExp.next();
+        $sliderExp.slick('slickNext');
+        return false;
+    });
+    
+    $('.experience__content .slider-pagination ul li.prev a').click(function() {
+        $carouselExp.prev();
+        $sliderExp.slick('slickPrev');
+        return false;
+    });
+    
     var $stepSlides = $('.steps__tabs-slider .slick-slide:not(.slick-cloned)'), $wrapperContent = $('.steps .wrapper');
     $stepSlides.click(function() {
         $(this).addClass('slick-current').siblings('.slick-active').removeClass('slick-current'); 
         $wrapperContent.removeClass('active').eq($(this).index() - checkIndex()).addClass('active');
+    });
+    
+    $('.steps__tabs-slider-arrows li.next').click(function() {
+        var $currentIndex = $('.steps__tabs-slider .slick-slide.slick-current').index() - checkIndex();
+        $wrapperContent.removeClass('active').eq($currentIndex).addClass('active');
+        console.log($currentIndex);
+    });
+    
+    $('.steps__tabs-slider-arrows li.prev').click(function() {
+        var $currentIndex = $('.steps__tabs-slider .slick-slide.slick-current').index() - checkIndex();
+        $wrapperContent.removeClass('active').eq($currentIndex).addClass('active');
+        console.log($currentIndex);
     });
     
     $('.steps__tabs-slider .slick-slide div div a').click(function(e) {
@@ -184,17 +201,11 @@ $(function() {
         $('.consultation__content > a').hover(function() {
             $(this).find('span.arrow').animate({
                 width: "100%"
-            }, 200);
-            $(this).find('.text').animate({
-                opacity: 0 
-            }, 500);
+            }, 300); 
         }, function() {
             $(this).find('span.arrow').animate({
                 width: '14%'
             }, 450);
-            $(this).find('.text').delay(600).animate({
-                opacity: 1 
-            }, 400)
         });   
     }
     
@@ -235,12 +246,61 @@ $(function() {
     });
     
     
-    $('.header__menu ul li a').click(function(e) {
+    var $hExp = $('.experience').outerHeight(true);
+    
+//    $('.header__menu ul li a').click(function(e) {
+//        e.preventDefault();
+//        var $href = $(this).attr('href'), $top = $($href).offset().top;
+//        
+//        $('body, html').animate({
+//            scrollTop: $top - $heightHeader
+//        }, 800);
+//    });
+    
+    $('.header__menu ul li a').click(function() {
+        if($(window).width() < 576) {
+            $(this).closest('.header__popup-menu')
+               .animate({
+                    right: '-45%'
+                }, 350, function() {
+                    $(this).removeClass('open-popup');
+                    $('html, body').css('overflow', 'unset');
+                    //$('#carousel .carousel-image').css('z-index', '5'); 
+                    $('.header__hamburger-menu').removeClass('open');
+                });   
+        }
+    });
+    
+    
+    $('.header__menu ul li a[href="#experience"]').click(function(e) {
         e.preventDefault();
         var $href = $(this).attr('href'), $top = $($href).offset().top;
-        
+        $('body, html').animate({
+            scrollTop: $top - 370 - $heightHeader
+        }, 800);
+    });
+    
+    $('.header__menu ul li a[href="#steps"]').click(function(e) {
+        e.preventDefault();
+        var $href = $(this).attr('href'), $top = $($href).offset().top;
         $('body, html').animate({
             scrollTop: $top - $heightHeader
+        }, 800);
+    });    
+    
+    $('.header__menu ul li a[href="#service"]').click(function(e) {
+        e.preventDefault();
+        var $href = $(this).attr('href'), $top = $($href).offset().top;
+        $('body, html').animate({
+            scrollTop: $top - 130 - $heightHeader
+        }, 800);
+    });    
+    
+    $('.header__menu ul li a[href="#gallery"]').click(function(e) {
+        e.preventDefault();
+        var $href = $(this).attr('href'), $top = $($href).offset().top;
+        $('body, html').animate({
+            scrollTop: $top - 200 - $heightHeader
         }, 800);
     });
     
@@ -258,12 +318,35 @@ $(function() {
         $('.modal-form .modal-bottom .service-select').slideToggle(); 
     }); 
     
+//    var $paginationItem = $('.experience__content .slider-pagination ul li.pagination-item');
+//    console.log($paginationItem);
+//    
+//    $globalIndex = $('.experience__carousel > .carousel-center');
+//    console.log("Test: " + $globalIndex.index()); 
+    
+    
     /* Test */
-    setTimeout(function() {
-        $globalIndex = $('.experience__carousel > img.carousel-image.carousel-center').index();
-        console.log($globalIndex)
-        $('.experience__content .slider-pagination ul li.pagination-item').eq($globalIndex).addClass('active');
-    }, 200);    
+    
+    $('.experience__content .slider-pagination ul li.pagination-item').eq(0).addClass('active');
+    $('.experience__content .slider-pagination ul li.pagination-item a').click(function(e) {
+        e.preventDefault();
+//        $(this)
+//            .closest('li')
+//            .addClass('active')
+//            .siblings()
+//            .removeClass('active');
+    });
+    
+    var $pagItems = $('.experience__content .slider-pagination ul li.pagination-item');
+//    $pagItems.click(function() {
+//        $carouselExp.next();
+//    });
+//    
+        
+    $sliderExp.on('afterChange', function(event, slick, currentSlide) {
+        $pagItems.removeClass('active').eq(currentSlide).addClass('active');
+    });
+    
     
     
 });
@@ -326,6 +409,22 @@ $.fn.caminModal = function(params) {
         
         $('html, body').css('overflow', 'unset');
     });
+    
+//    $(document).keypress(function(e) {
+//       if(e.keyCode == 27) {
+//           $(params['overlay'])
+//            .css('display', 'block')
+//            .animate({opacity: .35}, 400, function() {
+//                $(params['modal'])
+//                    .css('display', 'block')
+//                    .animate({
+//                        top: 50 + '%',
+//                        opacity: 1
+//                    });
+//            }); 
+//       } 
+//        console.log(e.keyCode)
+//    });
         
     return this;
 }

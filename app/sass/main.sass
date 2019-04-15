@@ -60,7 +60,11 @@ h3
 main
     overflow: hidden
     
-
+.lb-data 
+    .lb-close
+        display: none
+    
+    
 /*  Modal form */
 
 .modal-form
@@ -74,6 +78,8 @@ main
     opacity: 0
     display: none
     z-index: 35
+    &.services
+        width: 361px
     .modal-close
         position: absolute
         top: 20px
@@ -87,6 +93,7 @@ main
             font-size: 18px
             letter-spacing: .9px
             margin-bottom: 14px
+            text-align: center
             color: $accent
         p
             font-family: $semibold
@@ -95,6 +102,15 @@ main
             line-height: 19px
             color: $text
     .modal-bottom
+        .success-message
+            padding: 5px
+            display: none
+            p
+                font-family: $semibold
+                font-size: 12px
+                text-align: center
+                margin: 0
+                color: $text
         .list-service
             position: relative
             img
@@ -103,7 +119,10 @@ main
                 right: 17px
                 transform: rotate(90deg)
                 width: 8px
-        input
+            input
+                cursor: pointer
+        input,
+        textarea
             font-family: $semibold
             font-size: 12px
             text-align: center
@@ -118,6 +137,11 @@ main
                 letter-spacing: -.12px
                 color: $text
                 color: #707070
+        textarea
+            padding: 22px
+            height: 120px
+            text-align: left
+            resize: none
         button
             +feedback-btn
             margin: 0
@@ -135,8 +159,21 @@ main
             position: relative
             box-shadow: 0 28px 47px rgba(255, 200, 178, 0.22)
             margin-bottom: 20px
-            padding: 30px 5px
+            padding: 15px 5px
             li
+                textarea
+                    font-family: "Montserrat Light", sans-serif
+                    font-size: 12px
+                    width: 100%
+                    border: none
+                    border-bottom: .5px solid rgba(184,184,184, .4)
+                    color: rgb(184, 184, 184)
+                    margin-top: 30px
+                    resize: none
+                    &::placeholder
+                        font-size: 12px
+                        letter-spacing: 1px
+                        color: rgb(184, 184, 184)
                 input
                     position: absolute
                     z-index: -1
@@ -159,9 +196,8 @@ main
                             left: 0
                             width: 15px
                             height: 15px
-                            border-radius: 4px
-                            border: 1px solid #707070
-                            box-shadow: inset 0 2px 3px rgba(0,0,0,.2)
+                            border: .5px solid rgba(184,184,184, .4)
+                            //box-shadow: inset 0 2px 3px rgba(0,0,0,.2)
                             transition: .2s
                         &::after
                             content: '\2713'
@@ -311,10 +347,9 @@ main
     height: 1221px
     &__content
         position: absolute
-        top: 50%
-        left: 13.177vw
+        top: 44%
+        left: 8.177vw
         transform: translateY(-50%)
-        max-width: 620px
         > a
             display: inline-block
             position: relative
@@ -350,11 +385,13 @@ main
                 transition: all .65s ease-in-out
         h1
             margin-bottom: 19px
+            max-width: 690px
         p
             font-family: $semibold
             font-size: 19px
             letter-spacing: .47px
             line-height: 29px
+            max-width: 620px
             color: $text
     &__background
         position: absolute
@@ -392,12 +429,17 @@ main
     &__carousel
         background-color: transparent!important
         width: 100%!important
+        img
+            pointer-events: none
+            &:hover
+                box-shadow: 30px 35px 12px rgba(0, 0, 0, 0.1)
         .carousel-feature
             border: none
             img
                 display: block
                 max-width: 100%
                 height: auto
+                pointer-events: none
         .tracker-individual-container
             position: static!important
             display: none!important
@@ -524,13 +566,14 @@ main
             letter-spacing: .35px
             line-height: 24px
             max-width: 565px
-            color: rgba(255, 255, 255, 0.59)
+            color: rgba(255, 255, 255, 0.9)
     &__tabs-slider
         box-shadow: 0 28px 47px rgba(255, 200, 178, 0.22)
         .slick-slide
             background-color: #fff
             padding: 35px 24px
             text-align: center
+            cursor: pointer
             div
                 div
                     a
@@ -539,6 +582,7 @@ main
                         letter-spacing: 1.8px
                         text-decoration: none
                         white-space: nowrap
+                        outline: none
                         color: $text
             &.slick-current
                 background: linear-gradient(-45deg, #FF7A62, #FF935A, #FFB34F)
@@ -808,6 +852,8 @@ main
         position: absolute
         bottom: 0
         right: 23px
+        a
+            text-decoration: none
         span
             font-family: "Montserrat Light", sans-serif
             font-size: 12px

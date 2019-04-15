@@ -116,6 +116,10 @@
             max-height: 250px
             &.main
                 max-height: 530px
+                
+    .experience
+        &__content
+            margin-left: 60px
             
             
 +media-breakpoint-down(lg)
@@ -137,6 +141,7 @@
         &__content
             h1
                 font-size: 28px
+                max-width: 540px
             p
                 font-size: 14px
                 line-height: 24px
@@ -289,6 +294,8 @@
                 img
                     height: 339px
     .gallery
+        &__dots
+            display: none
         &__arrows
             display: block
         &__caption 
@@ -342,6 +349,7 @@
             padding: 0 15px
             h1
                 font-size: 18px
+                max-width: 350px
             p
                 font-size: 12px
                 max-width: 350px
@@ -363,12 +371,13 @@
         margin-top: 100px
         margin-bottom: 100px
         &__content 
-            margin-top: 100px
+            margin-top: 55px
             h3
                 font-size: 16px
             p
                 font-size: 12px
             .slider-pagination 
+                margin-top: 0
                 ul
                     text-align: center
                     li
@@ -449,8 +458,8 @@
             &::after
                 width: 60%
                 height: 50%
-                top: -100px
-                right: -117px
+                top: -41px
+                right: -146px
                 transform: rotate(59deg)
                 border-radius: 0
         &__logo 
@@ -458,6 +467,7 @@
                 width: auto
         .gallery-slider 
             .image
+                height: 350px
                     
     .footer
         &__socials
@@ -524,7 +534,7 @@
         .gallery
             &__wrapper
                 &::after
-                    right: -50px
+                    right: -80px
                     transform: rotate(64deg)
                     
 
@@ -537,5 +547,5 @@
     .gallery
         &__wrapper
             &::after
-                top: -127px
-                transform: rotate(64deg)
+                top: -91px
+                transform: rotate(56deg)

@@ -12,7 +12,8 @@ var gulp              = require('gulp'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require("gulp-notify"),
 		rsync         = require('gulp-rsync'),
-        imagemin      = require('gulp-imagemin');
+    imagemin      = require('gulp-imagemin'),
+    del 					= require('del');
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -72,6 +73,37 @@ gulp.task('js', function() {
 //        .pipe(imagemin())
 //        .pipe(gulp.dest('app/img/min'))
 //});
+
+gulp.task('clean', function() {
+	return del.sync('dist');
+});
+
+gulp.task('build', ['clean', 'styles', 'js'], function() {
+	
+	var buildCss = gulp.src([
+	'app/css/main.min.css',
+	])
+	.pipe(gulp.dest('dist/css'));
+	
+	var buildFonts = gulp.src('app/fonts/**/*')
+	.pipe(gulp.dest('dist/fonts'));
+	
+	var buildImg = gulp.src('app/img/**/*')
+	.pipe(gulp.dest('dist/img'));
+	
+	var buildJs = gulp.src([
+		'app/js/scripts.min.js'
+	])
+	.pipe(gulp.dest('dist/js'));
+
+	var buildLibs = gulp.src([
+		'app/libs/images/**/*'
+	])
+	.pipe(gulp.dest('dist/libs/images'));
+	
+	var buildHtml = gulp.src('app/*.html')
+	.pipe(gulp.dest('dist'));
+});
 
 gulp.task('watch', ['styles', 'js', 'browser-sync'], function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
