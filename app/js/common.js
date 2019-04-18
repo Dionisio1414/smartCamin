@@ -191,21 +191,34 @@ $(function() {
     });
     
     var $hdr = $('.header');
+    var $sections = $('section');
     
     $(window).scroll(function() {
         if($(this).scrollTop() >= 100) $hdr.addClass('sticky')
         else $hdr.removeClass('sticky'); 
+        
+        $sections.each(function(i, el) {
+            var top = $(el).offset().top - $hdr.height() - 330, 
+                bottom = top + $(el).height(),
+                scroll = $(window).scrollTop(),
+                id = $(el).attr('id');
+//            console.log("top  " + top + "bottom  " + bottom + "scroll  " + scroll);
+            if(scroll > top && scroll < bottom) {
+                $('.header__menu ul li.active').removeClass('active');
+                $('.header__menu ul li a[href="#' + id + '"]').parent().addClass('active');
+            }
+        });
     });  
     
     if($(window).width() > 575) {
         $('.consultation__content > a').hover(function() {
             $(this).find('span.arrow').animate({
                 width: "100%"
-            }, 300); 
+            }, 150); 
         }, function() {
             $(this).find('span.arrow').animate({
                 width: '14%'
-            }, 450);
+            }, 150);
         });   
     }
     
@@ -276,7 +289,7 @@ $(function() {
         e.preventDefault();
         var $href = $(this).attr('href'), $top = $($href).offset().top;
         $('body, html').animate({
-            scrollTop: $top - 370 - $heightHeader
+            scrollTop: $top - 330 - $heightHeader
         }, 800);
     });
     
@@ -284,7 +297,7 @@ $(function() {
         e.preventDefault();
         var $href = $(this).attr('href'), $top = $($href).offset().top;
         $('body, html').animate({
-            scrollTop: $top - $heightHeader
+            scrollTop: $top - 250
         }, 800);
     });    
     
@@ -292,7 +305,7 @@ $(function() {
         e.preventDefault();
         var $href = $(this).attr('href'), $top = $($href).offset().top;
         $('body, html').animate({
-            scrollTop: $top - 130 - $heightHeader
+            scrollTop: $top - 80 - $heightHeader
         }, 800);
     });    
     

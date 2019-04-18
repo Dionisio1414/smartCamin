@@ -278,6 +278,11 @@ main
                         opacity: 1
                 &:last-child
                     margin-right: 0
+                &.active
+                    a
+                        color: $accent!important
+                        &::before
+                            opacity: 1
     .call
         +feedback-btn
         margin-left: 4.948vw
@@ -424,8 +429,8 @@ main
 /* Experience */
 
 .experience
-    margin-top: 370px
-    margin-bottom: 450px
+    margin-top: 280px
+    margin-bottom: 250px
     &__carousel
         background-color: transparent!important
         width: 100%!important
@@ -565,7 +570,7 @@ main
             font-size: 14px
             letter-spacing: .35px
             line-height: 24px
-            max-width: 565px
+            max-width: 547px
             color: rgba(255, 255, 255, 0.9)
     &__tabs-slider
         box-shadow: 0 28px 47px rgba(255, 200, 178, 0.22)
@@ -591,6 +596,7 @@ main
                     color: #fff
     &__tabs-slider-arrows
         position: absolute
+        height: 100%
         top: 50%
         transform: translateY(-50%)
         padding: 0
@@ -601,11 +607,16 @@ main
         width: 100%
         pointer-events: none
         li
+            width: 3.5%
+            height: 100%
+            background: #fff
+            display: flex
+            justify-content: center
             cursor: pointer
             pointer-events: visible
-            &.prev
+            //&.prev
                 margin-left: 32px
-            &.next
+            //&.next
                 margin-right: 32px
     .slider-wrapper
         margin-top: 78px
