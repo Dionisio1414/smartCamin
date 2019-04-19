@@ -53,13 +53,15 @@
                     a
                         font-size: 13px
         .call
+            padding-left: 10px
+            padding-right: 10px
             font-size: 12px
 
     .steps
         &__caption
-            margin-left: 40px
+            margin-left: 60px
         &__description
-            margin-left: 40px
+            margin-left: 60px
         &__main-caption 
             > div 
                 p
@@ -89,8 +91,6 @@
         .call
             font-size: 11px
             margin-left: 1vw
-            padding-left: 10px
-            padding-right: 10px
         
     .consultation
         height: 770px
@@ -436,10 +436,10 @@
                 height: 408px
                 .image
                     height: 408px
-                + a
-                    display: block
-                    text-align: center
-                    margin-top: 30px
+            + a
+                display: block
+                text-align: center
+                margin-top: 30px
                     
     .gallery 
         &__caption 
@@ -482,12 +482,17 @@
                     
 @media screen and (max-width: 425px)
         .header
+            padding-top: 5px
+            padding-bottom: 5px
             &__logo
                 img.mobile
                     display: block
+                    width: 35px
                 a
                     svg
                         display: none
+            &.sticky
+                padding-bottom: 5px
             &__hamburger-menu
                 width: 25px
                 height: 25px
@@ -508,7 +513,7 @@
                 border-radius: 70px 70px 0px 70px
                 transform: rotate(31deg)
             &__content
-                top: 60%
+                top: 65%
 
         .steps
             padding-top: 70px
@@ -516,8 +521,8 @@
                 li
                     width: 20%
             &::after
-                bottom: -54%
-                left: -254px
+                bottom: -47%
+                left: -199px
                 transform: rotate(56deg)
             
         .service
@@ -534,8 +539,10 @@
 @media screen and (max-width: 375px)
     .consultation
         &__background
-            top: -27%
-            right: -125px
+            top: -32%
+            right: -155px
+        &__content
+            top: 56%
             
     .gallery
         &__wrapper

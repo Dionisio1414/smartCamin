@@ -42,7 +42,6 @@ gulp.task('js', function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/select/bootstrap-select.min.js',
         'app/libs/slick-carousel/slick/slick.js',
-        'app/libs/featureCarousel/jquery.featureCarousel.js',
 		'app/libs/waterwheelCarousel/jquery.waterwheelCarousel.js',
         'app/libs/lightBox/lightbox.js',
         'app/js/common.js'
@@ -68,11 +67,11 @@ gulp.task('js', function() {
 //	}))
 //});
 
-//gulp.task('imgminimization', function() {
-//    gulp.src('app/img/*')
-//        .pipe(imagemin())
-//        .pipe(gulp.dest('app/img/min'))
-//});
+gulp.task('imgminimization', function() {
+    gulp.src('app/img/**/*.{jpg,jpeg,png}')
+        .pipe(imagemin({ progressive: true }))
+        .pipe(gulp.dest('app/min'))
+});
 
 gulp.task('clean', function() {
 	return del.sync('dist');

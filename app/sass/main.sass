@@ -370,7 +370,6 @@ main
             border-radius: 25px
             margin-bottom: 30px
             text-decoration: none
-            transition: all .35s ease
             color: $text
             span.arrow
                 position: absolute
@@ -512,7 +511,7 @@ main
         z-index: -1
         transform: rotate(-2deg)
         border-radius: 50% 50% 270% 20%
-    .wrapper
+    //.wrapper
         display: none
         &.active
             display: block
@@ -547,7 +546,7 @@ main
             height: 270px
             background-color: rgba(255, 255, 255, 0.59)
     &__caption
-        margin-left: 90px
+        margin-left: 60px
         text-transform: uppercase
         color: rgba(255, 255, 255, 0.59)
         .count
@@ -564,7 +563,7 @@ main
             margin-bottom: 24px
             color: #fff
     &__description
-        margin-left: 90px
+        margin-left: 60px
         margin-bottom: 78px
         p
             font-size: 14px
@@ -664,10 +663,10 @@ main
                 img
                     max-height: none
                     height: 100%
-            + a
-                +feedback-btn
-                display: none
-                margin-left: 0
+        + a
+            +feedback-btn
+            display: none
+            margin-left: 0
         .desc
             background-color: #fff
             width: 100%
@@ -703,6 +702,7 @@ main
 /* Gallery */
 
 .gallery
+    margin-bottom: 65px
     &__caption
         margin-bottom: 30px
         h3
@@ -805,10 +805,45 @@ main
 
 /* Footer */
 
+.back-to-top
+    position: fixed
+    bottom: 25px
+    right: 25px
+    display: none
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    width: 43px
+    height: 43px
+    background-image: linear-gradient(to right,#e72d47 0,#ff563d 29%,#ff9c26 100%)
+    cursor: pointer
+    z-index: 2
+    img
+        position: absolute
+        top: 33%
+        left: 33%
+        width: 15px
+        height: 15px
+        transform: rotate(-90deg)
+
 .footer
     position: relative
     background-color: $text
-    padding: 48px 0 5px 0
+    padding: 60px 0 5px 0
+    &__top
+        position: absolute
+        top: -20px
+        left: 50%
+        transform: translateX(-50%)
+        display: flex
+        justify-content: center
+        border-radius: 50%
+        width: 40px
+        height: 40px
+        background-image: linear-gradient(to right,#e72d47 0,#ff563d 29%,#ff9c26 100%)
+        cursor: pointer
+        img
+            transform: rotate(-90deg)
     &__copyright
         position: absolute
         bottom: 0
@@ -835,10 +870,6 @@ main
     &__contacts
         margin-bottom: 31px
         .sub-container
-            display: -webkit-flex
-            display: -moz-flex
-            display: -ms-flex
-            display: -o-flex
             display: flex
             align-items: center
             margin-top: 23px
@@ -873,6 +904,8 @@ main
             color: #fff
         
 /* End footer */
+
+
 
 
 @import 'media'
