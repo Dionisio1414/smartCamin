@@ -43,8 +43,11 @@ gulp.task('js', function() {
 		'app/libs/select/bootstrap-select.min.js',
         'app/libs/slick-carousel/slick/slick.js',
 		'app/libs/waterwheelCarousel/jquery.waterwheelCarousel.js',
+		'app/libs/jqueryMask/jquery.mask.min.js',
         'app/libs/lightBox/lightbox.js',
-        'app/js/common.js'
+        'app/js/common.js',
+        'app/js/ajax_contact.js',
+        'app/js/ajax_service.js'
 		])
 	.pipe(concat('scripts.min.js'))
     .pipe(uglify()) // Mifify js (opt.)

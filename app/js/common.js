@@ -286,7 +286,7 @@ $(function() {
         e.preventDefault();
         var $href = $(this).attr('href'), $top = $($href).offset().top;
         $('body, html').animate({
-            scrollTop: $top - 330 - $heightHeader
+            scrollTop: $top - 405 - $heightHeader
         }, 800);
     });
     
@@ -294,7 +294,7 @@ $(function() {
         e.preventDefault();
         var $href = $(this).attr('href'), $top = $($href).offset().top;
         $('body, html').animate({
-            scrollTop: $top - 250
+            scrollTop: $top - 175
         }, 800);
     });    
     
@@ -310,7 +310,7 @@ $(function() {
         e.preventDefault();
         var $href = $(this).attr('href'), $top = $($href).offset().top;
         $('body, html').animate({
-            scrollTop: $top - 200 - $heightHeader
+            scrollTop: $top - 170 - $heightHeader
         }, 800);
     });
     
