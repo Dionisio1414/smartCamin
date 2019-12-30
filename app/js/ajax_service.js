@@ -11,17 +11,21 @@ jQuery(document).ready(function ($) {
             key = '',
             system = '',
             doors = '',
+            camin = '',
             flag = true;
+
             if ($('#air').is(":checked"))
-                air = 'Монтаж воздушных каминов';
+                air = 'Установка воздушных каминов и печей';
             if ($('#water').is(":checked"))
                 water = 'Монтаж каминов с водяной рубашкой';
             if ($('#key').is(":checked"))
                 key = 'Строительство саун под ключ';
             if ($('#system').is(":checked"))
-                system = 'Монтаж дымоотводных систем';
+                system = 'Монтаж керамических (модульных) дымоходов';
             if ($('#doors').is(":checked"))
-                doors = 'Производство и установка каминных дверок';
+                doors = 'Производство и монтаж дымоходов из нержавеющей стали';
+            if ($('#camin').is(":checked"))
+                camin = 'Изготовление каминных дверок для кирпичных каминов';
 
             if (name == ''){
                 $('.invalid.service-name').show();
@@ -46,6 +50,7 @@ jQuery(document).ready(function ($) {
                     key: key,
                     system: system,
                     doors: doors,
+                    camin: camin,
                     success: function(){
                         $('.success-message.services').show();
                         $('#service').hide();

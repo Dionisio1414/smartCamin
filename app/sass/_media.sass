@@ -409,9 +409,16 @@
             justify-content: flex-end
             height: 100%
             li
-                background-color: #fff
+                background-image: none!important
+                background-color: #fff!important
                 &.prev
                     display: none!important
+                &.next
+                    margin-top: 1px
+                    img
+                        display: none
+                    img.mobile-arrow
+                        display: block
         &__caption
             text-align: left
             .count
@@ -528,7 +535,7 @@
             padding-top: 70px
             &__tabs-slider-arrows 
                 li
-                    width: 20%
+                    width: 55px
             &::after
                 bottom: -47%
                 left: -199px

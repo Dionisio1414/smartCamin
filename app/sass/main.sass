@@ -62,7 +62,14 @@ main
     
 .lb-data 
     .lb-close
-        display: none
+        float: none
+        position: absolute
+        top: -50px    
+        right: 50px
+        
+.lb-nav
+    a
+        opacity: 1!important
     
     
 /*  Modal form */
@@ -388,6 +395,7 @@ main
                 color: #fff
                 transition: all .65s ease-in-out
         h1
+            font-size: 38px
             margin-bottom: 19px
             max-width: 690px
         p
@@ -395,7 +403,7 @@ main
             font-size: 19px
             letter-spacing: .47px
             line-height: 29px
-            max-width: 620px
+            max-width: 630px
             color: $text
     &__background
         position: absolute
@@ -428,7 +436,7 @@ main
 /* Experience */
 
 .experience
-    margin-top: 280px
+    margin-top: 310px
     margin-bottom: 250px
     &__carousel
         background-color: transparent!important
@@ -606,17 +614,21 @@ main
         width: 100%
         pointer-events: none
         li
-            width: 35px
+            position: relative
+            width: 40px
             height: 100%
-            background: rgba(255, 255, 255, .25)
             display: flex
             justify-content: center
             cursor: pointer
             pointer-events: visible
+            img
+                width: 20px
             //&.prev
-                margin-left: 32px
-            //&.next
-                margin-right: 32px
+            &.next
+                background-image: linear-gradient(-45deg,#ff7a62,#ff935a,#ffb34f)
+                margin-top: -1px
+                .mobile-arrow
+                    display: none
     .slider-wrapper
         margin-top: 78px
             
@@ -680,8 +692,8 @@ main
                 font-family: $bold
                 font-size: 16px
                 letter-spacing: 1.6px
-                line-height: 24px
-                margin-bottom: 30px
+                line-height: 20px
+                margin-bottom: 34px
                 max-width: 280px
                 color: $text
             p
@@ -714,7 +726,7 @@ main
                 button:before
                     width: 19px
                     height: 19px
-                    font-size: 50px
+                    font-size: 70px
                     color: #fff
                 &.slick-active
                     button:before
@@ -808,7 +820,7 @@ main
 .back-to-top
     position: fixed
     bottom: 25px
-    right: 25px
+    left: 25px
     display: none
     justify-content: center
     align-items: center
